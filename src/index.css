@@ -1,0 +1,149 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap');
+
+@font-face {
+  font-family: 'Ruina';
+  src: url('./assets/fonts/RuinaOne-Black.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.montserrat-300 {
+	font-family: "Montserrat", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
+}
+.montserrat-600 {
+	font-family: "Montserrat", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	font-style: normal;
+}
+.montserrat-800 {
+	font-family: "Montserrat", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 800;
+	font-style: normal;
+}
+.plus-jakarta-sans-300 {
+	font-family: "Plus Jakarta Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
+}
+.plus-jakarta-sans-400 {
+	font-family: "Plus Jakarta Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+}
+.plus-jakarta-sans-600 {
+	font-family: "Plus Jakarta Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	font-style: normal;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: black;
+  background-color: white;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	overflow-x: hidden;
+}
+
+.font-ruina {
+	font-family: 'Ruina', sans-serif;
+}
+.button {
+	width: max-content;
+	min-height: 40px;
+	padding: 11px 42px 8px;
+	transition: all .3s;
+	font-size: 16px;
+	cursor: pointer;
+	margin: 0;
+}
+.button--arrow img {
+	margin-top: -4px;
+}
+.button--arrow:hover img{
+	filter: invert(1);
+}
+.button--large {
+	padding: 14px 100px;
+}
+.button--full {
+	width: 100%;
+	justify-content: center;
+}
+.button--small{
+	padding: 8px 10px 10px;
+	height: 40px;
+	font-size: 14px;
+	margin: 0;
+}
+.button--primary {
+	background-color: white;
+	border: 1px solid white;
+	color: black;
+}
+.button--primary:hover {
+	background-color: #527752;
+	color: white;
+}
+.button--secondary {
+	background-color: #527752;
+	border: 1px solid #527752;
+	color: white;
+	text-align: center;
+}
+.button--secondary:hover {
+	background-color: white;
+	color: #527752;
+}
+.title-line::after{
+	position: absolute;
+	content: "";
+	width: 100px;
+	height: 3px;
+	background-color: #B02F4A;
+	bottom: -10px;
+	left: calc(50% - 50px);
+}
+.line{
+	width: 18px;
+	height: 2px;
+	background-color: #505E5E;
+}
+.more{
+	width: 18px;
+	height: 2px;
+	background-color: #505E5E;
+	position: relative;
+}
+.more::after{
+	content: "";
+	position: absolute;
+	width: 2px;
+	height: 18px;
+	background-color: #505E5E;
+	top: -8px;
+	left: 7.5px;
+}
+.item-social{
+	transition: all .3s;
+}
+.item-social:hover .item-social-icon{
+	fill: #527752;
+}

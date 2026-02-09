@@ -6,7 +6,7 @@ import '../Home/home.css';
 import Layout from '../../components/Layout';
 import Accordion from '../../components/Accordion';
 
-import BannerFaq from '../../assets/img/banner-faq.png';
+import BannerFaq from '../../assets/img/banner-faq.webp';
 import Giraffe from '../../assets/img/giraffe.svg';
 
 const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, children }) => {

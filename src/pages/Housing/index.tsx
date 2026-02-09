@@ -6,15 +6,15 @@ import { Link } from 'react-router-dom';
 import '../Home/home.css';
 import Layout from '../../components/Layout';
 
-import BannerHospedaje from '../../assets/img/banner-hospedaje.png';
+import BannerHospedaje from '../../assets/img/banner-hospedaje.webp';
 import Ave from '../../assets/img/ave.svg';
 import ButtonArrow from '../../assets/img/arrow-small.svg';
-import BannerMap from '../../assets/img/map-dark.png';
+import BannerMap from '../../assets/img/map-dark.webp';
 import MapEffect from '../../assets/img/map-effect-2.png';
 import MapEffect2 from '../../assets/img/map-effect-3.png';
-import Habitacion1 from '../../assets/img/habitacion-1.png';
-import Habitacion2 from '../../assets/img/habitacion-2.png';
-import Habitacion3 from '../../assets/img/habitacion-3.png';
+import Habitacion1 from '../../assets/img/habitacion-1.webp';
+import Habitacion2 from '../../assets/img/habitacion-2.webp';
+import Habitacion3 from '../../assets/img/habitacion-3.webp';
 import Check from '../../assets/img/check.svg';
 
 const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, children }) => {

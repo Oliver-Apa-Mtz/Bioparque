@@ -6,22 +6,22 @@ import { useTrail, a } from '@react-spring/web'
 import './home.css';
 import Layout from '../../components/Layout';
 
-import BannerHome from '../../assets/img/banner-home.png';
+import BannerHome from '../../assets/img/banner-home.webp';
 import Wolf from '../../assets/img/wolf.svg';
-import Card1 from '../../assets/img/card-animal-1.png';
-import Card2 from '../../assets/img/card-animal-2.png';
-import Card3 from '../../assets/img/card-animal-3.png';
-import Card4 from '../../assets/img/card-1.png';
+import Card1 from '../../assets/img/card-animal-1.webp';
+import Card2 from '../../assets/img/card-animal-2.webp';
+import Card3 from '../../assets/img/card-animal-3.webp';
+import Card4 from '../../assets/img/card-1.webp';
 import GrayEffect from '../../assets/img/effect-gray.png';
-import Ave1 from '../../assets/img/animal-1.png';
-import Ave2 from '../../assets/img/animal-2.png';
-import BannerRed from '../../assets/img/banner-red.png';
-import Card5 from '../../assets/img/card-2.png';
-import Card6 from '../../assets/img/card-3.png';
+import Ave1 from '../../assets/img/animal-1.webp';
+import Ave2 from '../../assets/img/animal-2.webp';
+import BannerRed from '../../assets/img/banner-red.webp';
+import Card5 from '../../assets/img/card-2.webp';
+import Card6 from '../../assets/img/card-3.webp';
 import RedEffect from '../../assets/img/effect-red.png';
-import BannerMap from '../../assets/img/map-small.png';
+import BannerMap from '../../assets/img/map-small.webp';
 import MapEffect from '../../assets/img/map-effect.png';
-import AnimalMap from '../../assets/img/animal-3.png';
+import AnimalMap from '../../assets/img/animal-3.webp';
 import Arrow from '../../assets/img/arrow.svg';
 import ButtonArrow from '../../assets/img/arrow-button.svg';
 
@@ -101,12 +101,14 @@ const Home = () => {
 		setIsVisibleBanner5(scrollPosition > (headerHeight + 3000));
 		setIsVisibleBanner7(scrollPosition > (headerHeight + 2300));
 		setIsVisibleBanner8(scrollPosition > (headerHeight + 3200));
-		if (scrollPosition > 360 || isMobile) {
-			setTopWolf(-694);
-		} else {
-			const parallaxSpeed = 0.5;
-			const newTopWolf = -874 + (scrollPosition * parallaxSpeed);
-			setTopWolf(newTopWolf);
+		if (!isMobile) {
+			if (scrollPosition > 360 || isMobile) {
+				setTopWolf(-694);
+			} else {
+				const parallaxSpeed = 0.5;
+				const newTopWolf = -874 + (scrollPosition * parallaxSpeed);
+				setTopWolf(newTopWolf);
+			}
 		}
 	};
 
@@ -127,19 +129,19 @@ const Home = () => {
 	return (
 		<Layout>
 			<div>
-				<section className="w-full h-[1200px] px-20 bg-cover bg-center relative pt-[380px]" style={{ backgroundImage: `url(${BannerHome})` }} role="banner">
+				<section className="banner-ppal w-full h-[1200px] px-20 bg-cover bg-center relative pt-[380px]" style={{ backgroundImage: `url(${BannerHome})` }} role="banner">
 					<div className="w-full max-w-[1300px] mx-auto">
-						<div className="relative z-20">
+						<div className="relative z-20 text-center md:text-left">
 							<Trail open={title}>
 								<span className="text-[100px] text-red mb-8 leading-[110px] uppercase font-ruina title-shadow">Se parte de la</span>
 								<span className="text-[100px] text-red mb-8 leading-[110px] uppercase font-ruina title-shadow">exploración de</span>
 								<span className="text-[100px] text-red mb-8 leading-[110px] uppercase font-ruina title-shadow">la vida salvaje.</span>
 							</Trail>
 							<animated.div style={!isMobile ? animationPropsBanner1 : {}} className="animated-element">
-								<p className="text-white text-[49px] montserrat-300">
+								<p className="text-white text-[24px] md:text-[35px] xl:text-[49px] montserrat-300 mt-[30px] md:mt-[0px]">
 									¡Disfruta de nuestro parque en Mazatlán!
 								</p>
-								<div className='flex gap-4 mt-4'>
+								<div className='flex gap-4 mt-4 justify-center md:justify-start flex-wrap sm:flex-nowrap'>
 									<Link to="/contacto" className='button button--primary font-ruina relative flex justify-between items-center button--arrow'>
 										Conoce más
 										<img src={ButtonArrow} alt="" className='w-[18px] ml-4' />

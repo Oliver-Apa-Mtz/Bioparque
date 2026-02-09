@@ -6,7 +6,7 @@ import '../Home/home.css';
 import Layout from '../../components/Layout';
 import Accordion from '../../components/Accordion';
 
-import BannerRegulation from '../../assets/img/banner-reglamento.png';
+import BannerRegulation from '../../assets/img/banner-reglamento.webp';
 import Zebra from '../../assets/img/zebra.svg';
 
 const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, children }) => {

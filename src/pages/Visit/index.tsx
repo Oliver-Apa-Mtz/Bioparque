@@ -6,25 +6,25 @@ import { Link } from 'react-router-dom';
 import '../Home/home.css';
 import Layout from '../../components/Layout';
 
-import BannerVisita from '../../assets/img/banner-visita.png';
+import BannerVisita from '../../assets/img/banner-visita.webp';
 import Ave from '../../assets/img/flamenco.svg';
-import BannerMap from '../../assets/img/map-2.png';
+import BannerMap from '../../assets/img/map-2.webp';
 import MapEffect from '../../assets/img/map-effect-4.png';
 import ButtonArrow from '../../assets/img/arrow-button.svg';
-import Visita1 from '../../assets/img/visita-1.png';
+import Visita1 from '../../assets/img/visita-1.webp';
 import Icon1 from '../../assets/img/icon-7.svg';
 import Icon2 from '../../assets/img/icon-8.svg';
 import Icon3 from '../../assets/img/icon-9.svg';
 import Icon4 from '../../assets/img/icon-10.svg';
 import Icon5 from '../../assets/img/icon-11.svg';
 import Icon6 from '../../assets/img/icon-12.svg';
-import Animal from '../../assets/img/animal-7.png';
+import Animal from '../../assets/img/animal-7.webp';
 import GrayEffect from '../../assets/img/effect-gray.png';
 import BrownEffect from '../../assets/img/Brown-effect.png';
 import Check from '../../assets/img/check.svg';
-import Visita2 from '../../assets/img/promocion-1.png';
-import Visita3 from '../../assets/img/promocion-2.png';
-import Visita4 from '../../assets/img/promocion-3.png';
+import Visita2 from '../../assets/img/promocion-1.webp';
+import Visita3 from '../../assets/img/promocion-2.webp';
+import Visita4 from '../../assets/img/promocion-3.webp';
 import ButtonArrowSmall from '../../assets/img/arrow-small.svg';
 
 const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, children }) => {

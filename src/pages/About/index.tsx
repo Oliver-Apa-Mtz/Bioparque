@@ -6,12 +6,12 @@ import '../Home/home.css';
 import Layout from '../../components/Layout';
 import CalendarCustom from '../../components/Calendar';
 
-import BannerAbout from '../../assets/img/banner-about.png';
-import BannerGreen from '../../assets/img/bg-lines.png';
+import BannerAbout from '../../assets/img/banner-about.webp';
+import BannerGreen from '../../assets/img/bg-lines.webp';
 import Lion from '../../assets/img/lion.svg';
-import Animal1 from '../../assets/img/animal-4.png';
-import Animal2 from '../../assets/img/animal-5.png';
-import Animal3 from '../../assets/img/animal-6.png';
+import Animal1 from '../../assets/img/animal-4.webp';
+import Animal2 from '../../assets/img/animal-5.webp';
+import Animal3 from '../../assets/img/animal-6.webp';
 import GrayEffect from '../../assets/img/effect-gray.png';
 import BrownEffect from '../../assets/img/Brown-effect.png';
 import Icon1 from '../../assets/img/icon-1.svg';

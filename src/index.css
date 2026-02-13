@@ -115,11 +115,11 @@ body{
 .title-line::after{
 	position: absolute;
 	content: "";
-	width: 100px;
+	width: 200px;
 	height: 3px;
 	background-color: #B02F4A;
 	bottom: -10px;
-	left: calc(50% - 50px);
+	left: calc(50% - 100px);
 }
 .line{
 	width: 18px;

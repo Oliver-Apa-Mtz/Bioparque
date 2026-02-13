@@ -16,6 +16,7 @@ import Habitacion1 from '../../assets/img/habitacion-1.webp';
 import Habitacion2 from '../../assets/img/habitacion-2.webp';
 import Habitacion3 from '../../assets/img/habitacion-3.webp';
 import Check from '../../assets/img/check.svg';
+import BlueEffect from '../../assets/img/wave-effect-3.png';
 
 const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, children }) => {
 	const items = React.Children.toArray(children)
@@ -24,7 +25,7 @@ const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, c
 		delay: 200,
 		opacity: open ? 1 : 0,
 		x: open ? 0 : -20,
-		height: open ? 110 : 80,
+		height: open ? 130 : 80,
 		from: { opacity: 0, x: -20, height: 80 },
 	})
 	return (
@@ -46,6 +47,9 @@ const Housing = () => {
 	const [isVisibleBanner2, setIsVisibleBanner2] = useState(false);
 	const [isVisibleBanner3, setIsVisibleBanner3] = useState(false);
 	const [isVisibleBanner4, setIsVisibleBanner4] = useState(false);
+	const [modalOpen, setModalOpen] = useState(false);
+	const [selectedImage, setSelectedImage] = useState(0);
+	const [galleryImages] = useState([Habitacion1, Habitacion2, Habitacion3]);
 
 	const animationPropsBanner1 = useSpring({
 		opacity: isVisible ? 1 : 0,
@@ -92,15 +96,23 @@ const Housing = () => {
 		};
 	}, []);
 
+	useEffect(() => {
+		if (modalOpen) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = 'unset';
+		}
+	}, [modalOpen]);
+
 	return (
 		<Layout>
 			<div>
-				<section className="w-full h-[1200px] px-20 bg-cover bg-center relative pt-[360px]" style={{ backgroundImage: `url(${BannerHospedaje})` }} role="banner">
+				<section className="w-full h-[1200px] px-20 bg-cover bg-center relative pt-[300px]" style={{ backgroundImage: `url(${BannerHospedaje})` }} role="banner">
 					<div className="w-full max-w-[1300px] mx-auto">
 						<div className="relative z-20">
 							<Trail open={title}>
-								<span className="text-[100px] text-secundario mb-8 leading-[110px] uppercase font-ruina title-shadow">Hospedate</span>
-								<span className="text-[100px] text-secundario mb-8 leading-[110px] uppercase font-ruina title-shadow">En Bioparque</span>
+								<span className="text-[129px] text-white mb-10 leading-[130px] uppercase font-ruina title-shadow">Hospedate</span>
+								<span className="text-[129px] text-white mb-10 leading-[130px] uppercase font-ruina title-shadow">En Bioparc</span>
 							</Trail>
 							<animated.div style={!isMobile ? animationPropsBanner1 : {}} className="animated-element">
 								<p className="text-white text-[49px] montserrat-300 wfull max-w-[850px] leading-[50px]">
@@ -128,20 +140,23 @@ const Housing = () => {
 						</p>
 						<p className='text-[30px] text-principal my-20 uppercase text-center font-ruina tracking-[6px]'>Tipos de habitación</p>
 					</div>
+					<div className='absolute w-full right-0 top-[60px] z-10'>
+						<img src={BlueEffect} alt="" className='w-full' />
+					</div>
 				</section>
 
-				<section className='w-full pb-10 mb-10'>
+				<section className='w-full pb-10 mb-10 relative z-10'>
 					<div className="w-full max-w-[1300px] mx-auto">
 						<animated.div style={!isMobile ? animationPropsBanner3 : {}} className="animated-element">
 							<div className='w-full flex gap-4 justify-between'>
 								<div className='w-full max-w-[424px]'>
-									<div className='w-full h-[476px] bg-cover bg-center' style={{ backgroundImage: `url(${Habitacion1})` }}></div>
+									<div className='w-full h-[476px] bg-cover bg-center cursor-pointer' style={{ backgroundImage: `url(${Habitacion1})` }} onClick={() => { setModalOpen(true); setSelectedImage(0); }}></div>
 									<div className='w-full max-w-[340px] mx-auto'>
 										<p className='montserrat-300 text-principal text-[40px] text-center'>Eco-lodges familiares</p>
-										<Link to="/contacto" className='button button--secondary button--full font-ruina relative flex justify-between items-center button--arrow'>
+										<button onClick={() => { setModalOpen(true); setSelectedImage(0); }} className='button button--secondary button--full font-ruina relative flex justify-between items-center button--arrow'>
 											Ver galería
 											<img src={ButtonArrow} alt="" className='w-[8px] ml-4 -mt-[4px]' />
-										</Link>
+										</button>
 										<p className='plus-jakarta-sans-300 text-principal text-[21px] my-2'>Hospedajes desde</p>
 										<p className='plus-jakarta-sans-600 text-principal text-[50px] my-2'>$950 <span className='plus-jakarta-sans-300 text-[#959191] text-[16px]'>/ POR NOCHE</span></p>
 										<p className='montserrat-300 text-[#959191] text-[16px] my-2'>con opciones adaptadas a familias, parejas y grupos.</p>
@@ -176,13 +191,13 @@ const Housing = () => {
 									</div>
 								</div>
 								<div className='w-full max-w-[424px]'>
-									<div className='w-full h-[476px] bg-cover bg-center' style={{ backgroundImage: `url(${Habitacion2})` }}></div>
+									<div className='w-full h-[476px] bg-cover bg-center cursor-pointer' style={{ backgroundImage: `url(${Habitacion2})` }} onClick={() => { setModalOpen(true); setSelectedImage(1); }}></div>
 									<div className='w-full max-w-[340px] mx-auto'>
 										<p className='montserrat-300 text-principal text-[40px] text-center'>Cabañas privadas</p>
-										<Link to="/contacto" className='button button--secondary button--full font-ruina relative flex justify-between items-center button--arrow'>
+										<button onClick={() => { setModalOpen(true); setSelectedImage(1); }} className='button button--secondary button--full font-ruina relative flex justify-between items-center button--arrow'>
 											Ver galería
 											<img src={ButtonArrow} alt="" className='w-[8px] ml-4 -mt-[4px]' />
-										</Link>
+										</button>
 										<p className='plus-jakarta-sans-300 text-principal text-[21px] my-2'>Hospedajes desde</p>
 										<p className='plus-jakarta-sans-600 text-principal text-[50px] my-2'>$850 <span className='plus-jakarta-sans-300 text-[#959191] text-[16px]'>/ POR NOCHE</span></p>
 										<p className='montserrat-300 text-[#959191] text-[16px] my-2'>con opciones adaptadas a familias, parejas y grupos.</p>
@@ -217,13 +232,13 @@ const Housing = () => {
 									</div>
 								</div>
 								<div className='w-full max-w-[424px]'>
-									<div className='w-full h-[476px] bg-cover bg-center' style={{ backgroundImage: `url(${Habitacion3})` }}></div>
+									<div className='w-full h-[476px] bg-cover bg-center cursor-pointer' style={{ backgroundImage: `url(${Habitacion3})` }} onClick={() => { setModalOpen(true); setSelectedImage(2); }}></div>
 									<div className='w-full max-w-[340px] mx-auto'>
 										<p className='montserrat-300 text-principal text-[40px] text-center'>Área de camping</p>
-										<Link to="/contacto" className='button button--secondary button--full font-ruina relative flex justify-between items-center button--arrow'>
+										<button onClick={() => { setModalOpen(true); setSelectedImage(1); }} className='button button--secondary button--full font-ruina relative flex justify-between items-center button--arrow'>
 											Ver galería
 											<img src={ButtonArrow} alt="" className='w-[8px] ml-4 -mt-[4px]' />
-										</Link>
+										</button>
 										<p className='plus-jakarta-sans-300 text-principal text-[21px] my-2'>Hospedajes desde</p>
 										<p className='plus-jakarta-sans-600 text-principal text-[50px] my-2'>$650 <span className='plus-jakarta-sans-300 text-[#959191] text-[16px]'>/ POR NOCHE</span></p>
 										<p className='montserrat-300 text-[#959191] text-[16px] my-2'>con opciones adaptadas a familias, parejas y grupos.</p>
@@ -264,6 +279,26 @@ const Housing = () => {
 					</div>
 					<img src={MapEffect2} alt="" className='w-full absolute -bottom-[20px] left-0' />
 				</section>
+
+				{modalOpen && (
+					<div className='fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4' onClick={() => setModalOpen(false)}>
+						<div className='relative w-auto' onClick={(e) => e.stopPropagation()}>
+							<button onClick={() => setModalOpen(false)} className='absolute -top-12 -right-10 text-white text-4xl hover:text-gray-300'>&times;</button>
+							<img src={galleryImages[selectedImage]} alt="" className='w-auto h-auto max-h-[70vh] object-contain mb-4' />
+							<div className='flex gap-4 justify-center'>
+								{galleryImages.map((img, index) => (
+									<img
+										key={index}
+										src={img}
+										alt=""
+										className={`w-[150px] h-[100px] object-cover cursor-pointer border-2 ${selectedImage === index ? 'border-white' : 'border-transparent opacity-60'} hover:opacity-100`}
+										onClick={() => setSelectedImage(index)}
+									/>
+								))}
+							</div>
+						</div>
+					</div>
+				)}
 			</div>
 		</Layout>
 	)

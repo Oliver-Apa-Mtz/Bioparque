@@ -8,6 +8,7 @@ import Accordion from '../../components/Accordion';
 
 import BannerFaq from '../../assets/img/banner-faq.webp';
 import Giraffe from '../../assets/img/giraffe.svg';
+import MapEffect2 from '../../assets/img/map-effect-3.png';
 
 const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, children }) => {
 	const items = React.Children.toArray(children)
@@ -16,7 +17,7 @@ const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, c
 		delay: 200,
 		opacity: open ? 1 : 0,
 		x: open ? 0 : -20,
-		height: open ? 110 : 80,
+		height: open ? 130 : 80,
 		from: { opacity: 0, x: -20, height: 80 },
 	})
 	return (
@@ -32,23 +33,23 @@ const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, c
 
 const items = [
 	{
-		title: "Seguridad personal",
+		title: "¿Dónde está ubicado el Bioparque Mazatlán?",
 		content: "Sigue los caminos marcados y respeta las señalizaciones.",
 	},
 	{
-		title: "Respeto a los animales",
+		title: "¿Cuánto cuesta la entrada al Bioparque?",
 		content: "No alimentes ni molestes a los animales dentro del bioparque.",
 	},
 	{
-		title: "Objetos restringidos",
+		title: "¿Qué animales puedo ver en el Bioparque?",
 		content: "Evita ingresar con objetos punzocortantes o peligrosos.",
 	},
 	{
-		title: "Alimentos y bebidas",
+		title: "¿Se pueden comprar boletos en línea?",
 		content: "Se permite ingresar con agua; consulta las reglas sobre alimentos.",
 	},
 	{
-		title: "Conducta general",
+		title: "¿Cuentan con estacionamiento?",
 		content: "Mantén un comportamiento adecuado y cuida el entorno.",
 	},
 ];
@@ -101,8 +102,8 @@ const Faq = () => {
 					<div className="w-full max-w-[1300px] mx-auto">
 						<div className="relative z-20">
 							<Trail open={title}>
-								<span className="text-[100px] text-secundario mb-8 leading-[110px] uppercase font-ruina title-shadow">Preguntas</span>
-								<span className="text-[100px] text-secundario mb-8 leading-[110px] uppercase font-ruina title-shadow">Frecuentes</span>
+								<span className="text-[129px] text-white mb-10 leading-[130px] uppercase font-ruina title-shadow">Preguntas</span>
+								<span className="text-[129px] text-white mb-10 leading-[130px] uppercase font-ruina title-shadow">Frecuentes</span>
 							</Trail>
 							<animated.div style={!isMobile ? animationPropsBanner1 : {}} className="animated-element">
 								<p className="text-white text-[49px] montserrat-300 wfull max-w-[650px] leading-[48px]">
@@ -113,7 +114,7 @@ const Faq = () => {
 					</div>
 				</section>
 
-				<section className="w-full mb-10 relative">
+				<section className="w-full mb-20 relative">
 					<animated.div style={!isMobile ? animationPropsBanner2 : {}} className="relative animated-element w-full">
 						<div className='absolute w-[1600px] right-0 z-10 giraffe-animate' style={{ top: topWolf + 'px' }}>
 							<img src={Giraffe} alt="" className='w-full' />
@@ -127,6 +128,7 @@ const Faq = () => {
 							<Accordion items={items} />
 						</div>
 					</div>
+					<img src={MapEffect2} alt="" className='w-full absolute -bottom-[82px] left-0' />
 				</section>
 
 			</div>

@@ -10,9 +10,8 @@ import BannerAbout from '../../assets/img/banner-about.webp';
 import BannerGreen from '../../assets/img/bg-lines.webp';
 import Lion from '../../assets/img/lion.svg';
 import Animal1 from '../../assets/img/animal-4.webp';
-import Animal2 from '../../assets/img/animal-5.webp';
 import Animal3 from '../../assets/img/animal-6.webp';
-import GrayEffect from '../../assets/img/effect-gray.png';
+import BlueEffect from '../../assets/img/wave-effect-2.svg';
 import BrownEffect from '../../assets/img/Brown-effect.png';
 import Icon1 from '../../assets/img/icon-1.svg';
 import Icon2 from '../../assets/img/icon-2.svg';
@@ -20,6 +19,7 @@ import Icon3 from '../../assets/img/icon-3.svg';
 import Icon4 from '../../assets/img/icon-4.svg';
 import Icon5 from '../../assets/img/icon-5.svg';
 import Icon6 from '../../assets/img/icon-6.svg';
+import MapEffect2 from '../../assets/img/map-effect-3.png';
 
 const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, children }) => {
 	const items = React.Children.toArray(children)
@@ -28,7 +28,7 @@ const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, c
 		delay: 200,
 		opacity: open ? 1 : 0,
 		x: open ? 0 : -20,
-		height: open ? 110 : 80,
+		height: open ? 130 : 80,
 		from: { opacity: 0, x: -20, height: 80 },
 	})
 	return (
@@ -50,7 +50,6 @@ const About = () => {
 	const [isVisibleBanner2, setIsVisibleBanner2] = useState(false);
 	const [isVisibleBanner3, setIsVisibleBanner3] = useState(false);
 	const [isVisibleBanner4, setIsVisibleBanner4] = useState(false);
-	const [isVisibleBanner5, setIsVisibleBanner5] = useState(false);
 	const [isVisibleBanner6, setIsVisibleBanner6] = useState(false);
 
 	const animationPropsBanner1 = useSpring({
@@ -69,10 +68,6 @@ const About = () => {
 		opacity: isVisibleBanner4 ? 1 : 0,
 		transform: isVisibleBanner4 ? 'translateX(0)' : 'translateX(50px)',
 	});
-	const animationPropsBanner5 = useSpring({
-		opacity: isVisibleBanner5 ? 1 : 0,
-		transform: isVisibleBanner5 ? 'translateY(0)' : 'translateY(50px)',
-	});
 	const animationPropsBanner6 = useSpring({
 		opacity: isVisibleBanner6 ? 1 : 0,
 		transform: isVisibleBanner6 ? 'translateY(0)' : 'translateY(50px)',
@@ -83,10 +78,9 @@ const About = () => {
 		const headerHeight = 100;
 		setIsVisibleBanner3(scrollPosition > (headerHeight + 800));
 		setIsVisibleBanner4(scrollPosition > (headerHeight + 700));
-		setIsVisibleBanner5(scrollPosition > (headerHeight + 1200));
 		setIsVisibleBanner6(scrollPosition > (headerHeight + 2600));
-		if (scrollPosition > 640 || isMobile) {
-			setTopWolf(-654);
+		if (scrollPosition > 500 || isMobile) {
+			setTopWolf(-725);
 		} else {
 			const parallaxSpeed = 0.5;
 			const newTopWolf = -974 + (scrollPosition * parallaxSpeed);
@@ -115,8 +109,8 @@ const About = () => {
 					<div className="w-full max-w-[1300px] mx-auto">
 						<div className="relative z-20">
 							<Trail open={title}>
-								<span className="text-[100px] text-secundario mb-8 leading-[110px] uppercase font-ruina title-shadow">Bioparque</span>
-								<span className="text-[100px] text-secundario mb-8 leading-[110px] uppercase font-ruina title-shadow">Mazatlán</span>
+								<span className="text-[129px] text-white mb-10 leading-[130px] uppercase font-ruina title-shadow">Bioparc</span>
+								<span className="text-[129px] text-white mb-10 leading-[130px] uppercase font-ruina title-shadow">Mazatlán</span>
 							</Trail>
 							<animated.div style={!isMobile ? animationPropsBanner1 : {}} className="animated-element">
 								<p className="text-white text-[49px] montserrat-300 wfull max-w-[650px] leading-[48px]">
@@ -129,7 +123,7 @@ const About = () => {
 
 				<section className="w-full mb-10 relative">
 					<animated.div style={!isMobile ? animationPropsBanner2 : {}} className="relative animated-element w-full">
-						<div className='absolute w-[1600px] right-0 z-10 lion-animate' style={{ top: topWolf + 'px' }}>
+						<div className='absolute w-[1900px] right-0 z-10 lion-animate' style={{ top: topWolf + 'px' }}>
 							<img src={Lion} alt="" className='w-full' />
 						</div>
 					</animated.div>
@@ -137,7 +131,7 @@ const About = () => {
 						<h2 className="text-[36px] text-principal mb-8 uppercase text-center font-ruina title-line relative tracking-[6px]">
 							Conoce más sobre nosotros
 						</h2>
-						<div className='w-full bg-green flex justify-end items-center pr-6 py-20 bg-cover bg-center mt-[200px] relative' style={{ backgroundImage: `url(${BannerGreen})` }}>
+						<div className='w-full bg-[#314B32] flex justify-end items-center pr-6 py-20 bg-cover bg-center mt-[200px] relative' style={{ backgroundImage: `url(${BannerGreen})` }}>
 							<animated.div style={!isMobile ? animationPropsBanner3 : {}} className="animated-element w-[728px] absolute -top-[110px] -left-[60px]">
 								<img src={Animal1} alt="" />
 							</animated.div>
@@ -159,16 +153,13 @@ const About = () => {
 									</p>
 								</div>
 							</animated.div>
-							<animated.div style={!isMobile ? animationPropsBanner5 : {}} className="animated-element absolute -bottom-[320px] right-0">
-								<img src={Animal2} alt="" className='w-[411px]' />
-							</animated.div>
 						</div>
 					</div>
 				</section>
 
-				<section className='w-full bg-grayLight relative mt-[360px] pt-[70px] pb-[150px]'>
-					<div className='absolute w-[2200px] right-0 -top-[135px] z-10 ave-animate'>
-						<img src={GrayEffect} className='w-full' alt="" />
+				<section className='w-full relative mt-[360px] pt-[70px] pb-[150px]'>
+					<div className='absolute w-full right-0 -top-[780px] z-10 ave-animate'>
+						<img src={BlueEffect} className='w-full' alt="" />
 					</div>
 					<div className="w-full max-w-[1360px] mx-auto px-[20px] relative z-20 pt-20">
 						<div className='flex justify-between gap-4'>
@@ -179,7 +170,7 @@ const About = () => {
 									<img src={BrownEffect} alt="" className='w-full absolute -bottom-[37px] left-0 rotate-180' />
 								</div>
 								<img src={Icon1} alt="" className='mx-auto mb-4' />
-								<p className='montserrat-300 text-[33px] leading-[42px] text-principal'>El <b className='montserrat-800'>Bioparque Mazatlán</b></p>
+								<p className='montserrat-300 text-[33px] leading-[42px] text-principal'>El <b className='montserrat-800'>Bioparc Mazatlán</b></p>
 								<p className='montserrat-300 text-[33px] leading-[42px] text-principal'>abre todos los días</p>
 								<p className='montserrat-300 text-[33px] leading-[42px] text-principal'>de <b className='montserrat-800'>9:00</b> a.m. a <b className='montserrat-800'>6:00</b> p.m.</p>
 								<p className='montserrat-300 text-[33px] my-8 text-principal'>
@@ -235,12 +226,9 @@ const About = () => {
 							<img src={Animal3} alt="" className='w-[333px]' />
 						</animated.div>
 					</div>
-					<div className='absolute w-[2200px] right-0 -bottom-[142px] z-10 ave-animate'>
-						<img src={GrayEffect} className='w-full rotate-180' alt="" />
-					</div>
 				</section>
 
-				<section className='w-full mt-[150px] mb-[100px]'>
+				<section className='w-full mt-[150px] mb-[100px] relative'>
 					<div className="w-full max-w-[1360px] mx-auto px-[20px] relative z-20 pt-20">
 						<h2 className="text-[36px] text-principal mb-8 uppercase text-center font-ruina relative tracking-[6px]">
 							Calendario de temporadas y eventos
@@ -258,6 +246,7 @@ const About = () => {
 					<div className="w-full max-w-[1360px] mx-auto px-[20px] pt-4">
 						<CalendarCustom />
 					</div>
+					<img src={MapEffect2} alt="" className='w-full absolute -bottom-[102px] left-0' />
 				</section>
 
 			</div >

@@ -12,6 +12,8 @@ import Image1 from '../../assets/img/experiencia-1.webp';
 import Image2 from '../../assets/img/experiencia-2.webp';
 import Image3 from '../../assets/img/experiencia-3.webp';
 import Image4 from '../../assets/img/experiencia-4.webp';
+import MapEffect2 from '../../assets/img/map-effect-3.png';
+import ButtonArrow from '../../assets/img/arrow-button.svg';
 
 const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, children }) => {
 	const items = React.Children.toArray(children)
@@ -20,7 +22,7 @@ const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, c
 		delay: 200,
 		opacity: open ? 1 : 0,
 		x: open ? 0 : -20,
-		height: open ? 110 : 80,
+		height: open ? 130 : 80,
 		from: { opacity: 0, x: -20, height: 80 },
 	})
 	return (
@@ -89,7 +91,7 @@ const Experiencies = () => {
 					<div className="w-full max-w-[1300px] mx-auto">
 						<div className="relative z-20">
 							<Trail open={title}>
-								<span className="text-[100px] text-secundario mb-8 leading-[110px] uppercase font-ruina title-shadow">Experiencias</span>
+								<span className="text-[129px] text-white mb-10 leading-[130px] uppercase font-ruina title-shadow">Experiencias</span>
 							</Trail>
 							<animated.div style={!isMobile ? animationPropsBanner1 : {}} className="animated-element">
 								<p className="text-white text-[49px] montserrat-300 wfull max-w-[650px] leading-[48px]">
@@ -129,8 +131,8 @@ const Experiencies = () => {
 					</div>
 				</section>
 
-				<section className='w-full pb-10'>
-					<div className="w-full max-w-[1300px] mx-auto">
+				<section className='w-full pb-10 relative'>
+					<div className="w-full max-w-[1300px] mx-auto mb-20">
 						<div className='w-full border-b border-gray mb-10 py-10'>
 							<animated.div style={!isMobile ? animationPropsBanner3 : {}} className="animated-element">
 								<div className='w-full flex gap-4 mb-4 h-[500px] justify-between'>
@@ -150,24 +152,14 @@ const Experiencies = () => {
 										en un hábitat seguro y educativo.
 									</p>
 								</div>
-								<div className='basis-1/3 flex justify-between pt-10'>
-									<div className='w-[100px]'>
-										<p className='montserrat-300 text-gray text-[18px]'>Zona</p>
-										<p className='montserrat-300 text-principal text-[16px]'>A-32</p>
-									</div>
-									<div className='w-[100px]'>
-										<p className='montserrat-300 text-gray text-[18px]'>Días</p>
-										<p className='montserrat-300 text-principal text-[16px]'>Lunes a Domingo</p>
-									</div>
-									<div className='w-[100px]'>
-										<p className='montserrat-300 text-gray text-[18px]'>Horario</p>
-										<p className='montserrat-300 text-principal text-[16px]'>9.30 a.m. a 5:30 p.m.</p>
-									</div>
+								<div className='basis-1/3 flex justify-between flex-wrap sm:flex-nowrap items-start gap-1 pt-4'>
+									<Link to="/contacto" className='button button--primary font-ruina relative flex justify-between items-center button--arrow' style={{ border: '1px solid #527752' }}>
+										Ver galeria
+										<img src={ButtonArrow} alt="" className='w-[18px] ml-4' />
+									</Link>
+									<Link to="/contacto" className='button button--secondary font-ruina'>Compre boletos en línea</Link>
 								</div>
 							</div>
-						</div>
-						<div className='flex justify-end'>
-							<Link to="/contacto" className='button button--secondary font-ruina'>Compre boletos en línea</Link>
 						</div>
 
 						<div className='w-full border-b border-gray mb-10 py-10'>
@@ -186,27 +178,17 @@ const Experiencies = () => {
 										Alimenta a las jirafas y conoce curiosidades sobre su vida.
 									</p>
 								</div>
-								<div className='basis-1/3 flex justify-between pt-10'>
-									<div className='w-[100px]'>
-										<p className='montserrat-300 text-gray text-[18px]'>Zona</p>
-										<p className='montserrat-300 text-principal text-[16px]'>A-32</p>
-									</div>
-									<div className='w-[100px]'>
-										<p className='montserrat-300 text-gray text-[18px]'>Días</p>
-										<p className='montserrat-300 text-principal text-[16px]'>Lunes a Domingo</p>
-									</div>
-									<div className='w-[100px]'>
-										<p className='montserrat-300 text-gray text-[18px]'>Horario</p>
-										<p className='montserrat-300 text-principal text-[16px]'>9.30 a.m. a 5:30 p.m.</p>
-									</div>
+								<div className='basis-1/3 flex justify-between flex-wrap sm:flex-nowrap items-start gap-1 pt-4'>
+									<Link to="/contacto" className='button button--primary font-ruina relative flex justify-between items-center button--arrow' style={{ border: '1px solid #527752' }}>
+										Ver galeria
+										<img src={ButtonArrow} alt="" className='w-[18px] ml-4' />
+									</Link>
+									<Link to="/contacto" className='button button--secondary font-ruina'>Compre boletos en línea</Link>
 								</div>
 							</div>
 						</div>
-						<div className='flex justify-end'>
-							<Link to="/contacto" className='button button--secondary font-ruina'>Compre boletos en línea</Link>
-						</div>
-
 					</div>
+					<img src={MapEffect2} alt="" className='w-full absolute -bottom-[20px] left-0' />
 				</section>
 
 			</div>

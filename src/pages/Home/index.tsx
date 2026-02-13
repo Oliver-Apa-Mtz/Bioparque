@@ -7,23 +7,22 @@ import './home.css';
 import Layout from '../../components/Layout';
 
 import BannerHome from '../../assets/img/banner-home.webp';
-import Wolf from '../../assets/img/wolf.svg';
+import Wolf from '../../assets/img/elephant.svg';
 import Card1 from '../../assets/img/card-animal-1.webp';
 import Card2 from '../../assets/img/card-animal-2.webp';
 import Card3 from '../../assets/img/card-animal-3.webp';
 import Card4 from '../../assets/img/card-1.webp';
-import GrayEffect from '../../assets/img/effect-gray.png';
+import WaveEffect from '../../assets/img/wave-effect.svg';
 import Ave1 from '../../assets/img/animal-1.webp';
 import Ave2 from '../../assets/img/animal-2.webp';
-import BannerRed from '../../assets/img/banner-red.webp';
+import WaveBlue from '../../assets/img/wave-blue.webp';
 import Card5 from '../../assets/img/card-2.webp';
 import Card6 from '../../assets/img/card-3.webp';
-import RedEffect from '../../assets/img/effect-red.png';
-import BannerMap from '../../assets/img/map-small.webp';
-import MapEffect from '../../assets/img/map-effect.png';
+import BannerMap from '../../assets/img/map-dark.webp';
 import AnimalMap from '../../assets/img/animal-3.webp';
 import Arrow from '../../assets/img/arrow.svg';
 import ButtonArrow from '../../assets/img/arrow-button.svg';
+import MapEffect2 from '../../assets/img/map-effect-3.png';
 
 const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, children }) => {
 	const items = React.Children.toArray(children)
@@ -32,7 +31,7 @@ const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, c
 		delay: 200,
 		opacity: open ? 1 : 0,
 		x: open ? 0 : -20,
-		height: open ? 110 : 80,
+		height: open ? 130 : 80,
 		from: { opacity: 0, x: -20, height: 80 },
 	})
 	return (
@@ -48,7 +47,7 @@ const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, c
 
 const Home = () => {
 	const [title, setTitle] = useState(false);
-	const [topWolf, setTopWolf] = useState(-874);
+	const [topWolf, setTopWolf] = useState(-800);
 	const isMobile = window.innerWidth <= 1023;
 	const [isVisible, setIsVisible] = useState(false);
 	const [isVisibleBanner2, setIsVisibleBanner2] = useState(false);
@@ -102,11 +101,11 @@ const Home = () => {
 		setIsVisibleBanner7(scrollPosition > (headerHeight + 2300));
 		setIsVisibleBanner8(scrollPosition > (headerHeight + 3200));
 		if (!isMobile) {
-			if (scrollPosition > 360 || isMobile) {
-				setTopWolf(-694);
+			if (scrollPosition > 310 || isMobile) {
+				setTopWolf(-645);
 			} else {
 				const parallaxSpeed = 0.5;
-				const newTopWolf = -874 + (scrollPosition * parallaxSpeed);
+				const newTopWolf = -800 + (scrollPosition * parallaxSpeed);
 				setTopWolf(newTopWolf);
 			}
 		}
@@ -133,9 +132,9 @@ const Home = () => {
 					<div className="w-full max-w-[1300px] mx-auto">
 						<div className="relative z-20 text-center md:text-left">
 							<Trail open={title}>
-								<span className="text-[100px] text-red mb-8 leading-[110px] uppercase font-ruina title-shadow">Se parte de la</span>
-								<span className="text-[100px] text-red mb-8 leading-[110px] uppercase font-ruina title-shadow">exploración de</span>
-								<span className="text-[100px] text-red mb-8 leading-[110px] uppercase font-ruina title-shadow">la vida salvaje.</span>
+								<span className="text-[129px] text-white mb-10 leading-[130px] uppercase font-ruina title-shadow">Se parte de la</span>
+								<span className="text-[129px] text-white mb-10 leading-[130px] uppercase font-ruina title-shadow">exploración de</span>
+								<span className="text-[129px] text-white mb-19 leading-[130px] uppercase font-ruina title-shadow">la vida salvaje.</span>
 							</Trail>
 							<animated.div style={!isMobile ? animationPropsBanner1 : {}} className="animated-element">
 								<p className="text-white text-[24px] md:text-[35px] xl:text-[49px] montserrat-300 mt-[30px] md:mt-[0px]">
@@ -155,48 +154,48 @@ const Home = () => {
 
 				<section className="w-full mb-10 relative">
 					<animated.div style={!isMobile ? animationPropsBanner2 : {}} className="relative animated-element w-full">
-						<div className='absolute w-[1600px] right-0 z-10 wolf-animate' style={{ top: topWolf + 'px' }}>
+						<div className='absolute w-[700px] right-0 z-10 wolf-animate' style={{ top: topWolf + 'px' }}>
 							<img src={Wolf} alt="" className='w-full' />
 						</div>
 					</animated.div>
-					<div className="w-full max-w-[1360px] mx-auto px-[20px] relative z-20 pt-20">
+					<div className="w-full max-w-[1740px] mx-auto px-[20px] relative z-20 pt-20">
 						<h2 className="text-[36px] text-principal mb-8 uppercase text-center font-ruina title-line relative tracking-[6px]">
 							Experiencias y Áreas
 						</h2>
-						<h3 className="text-principal text-[40px] text-center font-ruina">
-							Conoce a los habitantes más fascinantes del Bioparque Mazatlán.
+						<h3 className="text-principal text-[40px] text-center montserrat-300">
+							Conoce a los habitantes más fascinantes del Bioparc El Encanto
 						</h3>
 						<div className='w-full flex justify-between gap-4 pt-10'>
-							<div>
+							<div className='w-[26%]'>
 								<img src={Card1} alt="" className='h-[500px] object-cover' />
-								<p className='text-principal plus-jakarta-sans-300 text-[36px] my-4'>Jirafas</p>
+								<p className='text-principal plus-jakarta-sans-600 text-[36px] my-4'>Jirafas</p>
 								<p className='text-principal plus-jakarta-sans-400 text-[20px] leading-[25px]'>
 									Acércate a nuestras jirafas y
 									descubre curiosidades de su vida.
 								</p>
 							</div>
-							<div>
-								<img src={Card2} alt="" className='h-[500px] object-cover' />
-								<p className='text-principal plus-jakarta-sans-300 text-[36px] my-4'>Elefantes</p>
+							<div className='w-[48%]'>
+								<img src={Card2} alt="" className='h-[500px] object-cover w-[820px]' />
+								<p className='text-principal plus-jakarta-sans-600 text-[36px] my-4'>Elefantes</p>
 								<p className='text-principal plus-jakarta-sans-400 text-[20px] leading-[25px]'>
-									Admira a los gigantes de la sabana.
+									Admira a los gigantes de la sabana en un hábitat seguro y educativo.
 								</p>
 							</div>
-							<div>
+							<div className='w-[26%]'>
 								<img src={Card3} alt="" className='h-[500px] object-cover' />
-								<p className='text-principal plus-jakarta-sans-300 text-[36px] my-4'>Felinos</p>
+								<p className='text-principal plus-jakarta-sans-600 text-[36px] my-4'>Felinos</p>
 								<p className='text-principal plus-jakarta-sans-400 text-[20px] leading-[25px]'>
 									Símbolos de fuerza y majestuosidad en su hábitat
 								</p>
 							</div>
 						</div>
 					</div>
+					<div className='absolute w-full right-0 top-[500px] z-10'>
+						<img src={WaveEffect} className='w-full' alt="" />
+					</div>
 				</section>
 
-				<section className='w-full bg-grayLight relative mt-[400px] pt-[70px] pb-[150px]'>
-					<div className='absolute w-[2200px] right-0 -top-[135px] z-10 ave-animate'>
-						<img src={GrayEffect} className='w-full' alt="" />
-					</div>
+				<section className='w-full relative mt-[400px] pt-[70px] pb-[150px]'>
 					<animated.div style={!isMobile ? animationPropsBanner3 : {}} className="relative animated-element w-full z-10">
 						<img src={Ave1} className='absolute w-[467px] right-1/3 z-10 -top-[370px]' alt="" />
 					</animated.div>
@@ -212,6 +211,10 @@ const Home = () => {
 										y disfruta de una experiencia educativa y
 										divertida.
 									</p>
+									<ul className='montserrat-600 text-principal text-[22px] ml-4 pt-6 list-disc list-inside'>
+										<li>Safari familiar</li>
+										<li>Tours educativos para escuela</li>
+									</ul>
 								</div>
 							</animated.div>
 							<div className='relative'>
@@ -224,13 +227,12 @@ const Home = () => {
 					</div>
 				</section>
 
-				<section className='w-full bg-cover bg-center relative pb-[100px]' style={{ backgroundImage: `url(${BannerRed})` }}>
-					<img src={RedEffect} className='absolute -top-[20px] left-0 w-full' alt="" />
+				<section className='w-full bg-cover bg-center relative pb-[70px]' style={{ backgroundImage: `url(${WaveBlue})` }}>
 					<animated.div style={!isMobile ? animationPropsBanner7 : {}} className="animated-element">
-						<div className="w-full max-w-[1360px] mx-auto px-[20px] pt-20">
-							<div className='w-full max-w-[900px] text-center mx-auto mb-16'>
-								<p className='font-ruina text-[36px] text-white mb-2'>Blog</p>
-								<p className='montserrat-300 text-white text-[52px] leading-[50px] -tracking-[1px]'>
+						<div className="w-full max-w-[1360px] mx-auto px-[20px] pt-[200px]">
+							<div className='w-full max-w-[900px] text-center mx-auto mb-20'>
+								<p className='font-ruina text-[36px] text-black mb-2'>Blog</p>
+								<p className='montserrat-300 text-black text-[52px] leading-[50px] -tracking-[1px]'>
 									conservación, educación ambiental
 									y novedades <span className='montserrat-800 uppercase'>del Bioparque</span>
 								</p>
@@ -266,7 +268,6 @@ const Home = () => {
 				</section>
 
 				<section className='w-full bg-cover bg-center relative pb-[100px]' style={{ backgroundImage: `url(${BannerMap})` }}>
-					<img src={MapEffect} className='absolute -top-[10px] left-0 w-full' alt="" />
 					<animated.div style={!isMobile ? animationPropsBanner5 : {}} className="relative animated-element w-full z-10">
 						<img src={AnimalMap} className='absolute w-[262px] right-[250px] z-10 top-0' alt="" />
 					</animated.div>
@@ -285,6 +286,7 @@ const Home = () => {
 							</animated.div>
 						</div>
 					</div>
+					<img src={MapEffect2} alt="" className='w-full absolute -bottom-[20px] left-0' />
 				</section>
 
 			</div>

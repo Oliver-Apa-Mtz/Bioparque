@@ -10,7 +10,6 @@ import BannerVisita from '../../assets/img/banner-visita.webp';
 import Ave from '../../assets/img/flamenco.svg';
 import BannerMap from '../../assets/img/map-2.webp';
 import MapEffect from '../../assets/img/map-effect-4.png';
-import ButtonArrow from '../../assets/img/arrow-button.svg';
 import Visita1 from '../../assets/img/visita-1.webp';
 import Icon1 from '../../assets/img/icon-7.svg';
 import Icon2 from '../../assets/img/icon-8.svg';
@@ -21,7 +20,7 @@ import Icon6 from '../../assets/img/icon-12.svg';
 import Animal from '../../assets/img/animal-7.webp';
 import GrayEffect from '../../assets/img/effect-gray.png';
 import BrownEffect from '../../assets/img/Brown-effect.png';
-import Check from '../../assets/img/check.svg';
+import MapEffect2 from '../../assets/img/map-effect-3.png';
 import Visita2 from '../../assets/img/promocion-1.webp';
 import Visita3 from '../../assets/img/promocion-2.webp';
 import Visita4 from '../../assets/img/promocion-3.webp';
@@ -34,7 +33,7 @@ const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, c
 		delay: 200,
 		opacity: open ? 1 : 0,
 		x: open ? 0 : -20,
-		height: open ? 110 : 80,
+		height: open ? 130 : 80,
 		from: { opacity: 0, x: -20, height: 80 },
 	})
 	return (
@@ -121,20 +120,13 @@ const Visit = () => {
 					<div className="w-full max-w-[1300px] mx-auto">
 						<div className="relative z-20">
 							<Trail open={title}>
-								<span className="text-[100px] text-secundario mb-8 leading-[110px] uppercase font-ruina title-shadow">Tu visita</span>
+								<span className="text-[129px] text-white mb-10 leading-[130px] uppercase font-ruina title-shadow">Tu visita</span>
 							</Trail>
 							<animated.div style={!isMobile ? animationPropsBanner1 : {}} className="animated-element">
 								<p className="text-white text-[49px] montserrat-300 wfull max-w-[850px] leading-[50px]">
 									Planifica tu visita al Bioparque
 									Cómo llegar, tarifas y promociones
 								</p>
-								<div className='flex gap-4 mt-20'>
-									<Link to="/contacto" className='button button--primary font-ruina relative flex justify-between items-center button--arrow'>
-										Conoce más
-										<img src={ButtonArrow} alt="" className='w-[18px] ml-4' />
-									</Link>
-									<Link to="/contacto" className='button button--secondary font-ruina'>Planea tu visita</Link>
-								</div>
 							</animated.div>
 						</div>
 					</div>
@@ -169,7 +161,13 @@ const Visit = () => {
 				</section>
 
 				<section className="w-full mb-10">
-					<div className="w-full max-w-[1360px] mx-auto px-[20px] relative z-20 pt-20">
+					<div className="w-full max-w-[1360px] mx-auto px-[20px] relative z-20 pt-10">
+						<div className='w-full max-w-[340px] mx-auto mb-14'>
+							<Link to="/contacto" className='button button--secondary font-ruina relative flex justify-between items-center button--arrow' style={{ margin: '0 auto' }}>
+								Abrir en Google Maps
+								<img src={ButtonArrowSmall} alt="" className='w-[8px] ml-4' />
+							</Link>
+						</div>
 						<h2 className="w-full max-w-[700px] mx-auto text-[36px] text-principal mb-8 uppercase text-center font-ruina title-line relative tracking-[6px]">
 							Cómo llegar
 						</h2>
@@ -246,7 +244,7 @@ const Visit = () => {
 					<div className='absolute w-[2200px] right-0 -top-[135px] z-10 ave-animate'>
 						<img src={GrayEffect} className='w-full' alt="" />
 					</div>
-					<div className="w-full max-w-[1360px] mx-auto px-[20px] relative z-20 pt-20">
+					<div className="w-full max-w-[1360px] mx-auto px-[20px] relative z-20 pt-20 min-h-[900px]">
 						<div className='flex justify-between gap-4'>
 							<div className='w-full max-w-[648px] text-center'>
 								<div className='bg-brown relative mb-20'>
@@ -273,46 +271,15 @@ const Visit = () => {
 									Compra tus boletos en línea de manera rápida
 									y segura. Evita filas y asegúrate de tu entrada.
 								</p>
-								<div className='text-left'>
-									<p className='montserrat-300 text-[21px] text-principal pl-20 pr-2 my-2'>Adultos:</p>
-									<p className='montserrat-600 text-[50px] text-principal bg-white pl-20 pr-2'>
-										$650
-										<span className='montserrat-300 text-[16px] ml-4 text-[#959191]'>/ Entrada básica</span>
-									</p>
-								</div>
-								<div className='text-left'>
-									<p className='montserrat-300 text-[21px] text-principal pl-20 pr-2 my-2'>Niños:</p>
-									<p className='montserrat-600 text-[50px] text-principal bg-white pl-20 pr-2'>
-										$450
-										<span className='montserrat-300 text-[16px] ml-4 text-[#959191]'>/ Entrada básica</span>
-									</p>
-								</div>
-								<div className='text-left'>
-									<p className='montserrat-300 text-[21px] text-principal pl-20 pr-2 my-2'>Adultos mayores y capacidades diferentes:</p>
-									<p className='montserrat-600 text-[50px] text-principal bg-white pl-20 pr-2'>
-										$400
-										<span className='montserrat-300 text-[16px] ml-4 text-[#959191]'>/ Entrada básica</span>
-									</p>
-								</div>
 								<div className='w-full max-w-[340px] mx-auto mt-8'>
-									<p className='montserrat-300 text-principal text-[16px] flex items-center gap-2 mt-4'>
-										<img src={Check} alt="" className='w-[14px]' />
-										Entrada general al Bioparque
-									</p>
-									<p className='montserrat-300 text-principal text-[16px] flex items-center gap-2 mt-4'>
-										<img src={Check} alt="" className='w-[14px]' />
-										Recorrido básico
-									</p>
-									<p className='montserrat-300 text-[16px] mx-auto mb-2 mt-8 text-[#959191]'>No incluye zonas extras</p>
 									<Link to="/contacto" className='button button--secondary font-ruina relative flex justify-between items-center button--arrow' style={{ margin: '0 auto' }}>
 										Compra boletos ahora
 										<img src={ButtonArrowSmall} alt="" className='w-[8px] ml-4' />
 									</Link>
 								</div>
-
 							</div>
 						</div>
-						<animated.div style={!isMobile ? animationPropsBanner5 : {}} className="animated-element absolute bottom-[100px] left-[100px]">
+						<animated.div style={!isMobile ? animationPropsBanner5 : {}} className="animated-element absolute -bottom-[50px] left-[35%]">
 							<img src={Animal} alt="" className='w-[333px]' />
 						</animated.div>
 					</div>
@@ -321,7 +288,7 @@ const Visit = () => {
 					</div>
 				</section>
 
-				<section className="w-full mb-10 mt-[150px]">
+				<section className="w-full pb-6 mt-[150px] relative">
 					<div className="w-full max-w-[1360px] mx-auto px-[20px] relative z-20 pt-20">
 						<h2 className="w-full max-w-[700px] mx-auto text-[36px] text-principal mb-20 uppercase text-center font-ruina title-line relative tracking-[6px]">
 							Promociones
@@ -378,13 +345,14 @@ const Visit = () => {
 								</div>
 							</div>
 						</animated.div>
-						<div className='mt-10 mb-20'>
+						<div className='mt-14 mb-20'>
 							<Link to="/contacto" className='button button--secondary font-ruina relative flex justify-between items-center button--arrow' style={{ margin: '0 auto' }}>
 								Ver más
 								<img src={ButtonArrowSmall} alt="" className='w-[8px] ml-4' />
 							</Link>
 						</div>
 					</div>
+					<img src={MapEffect2} alt="" className='w-full absolute -bottom-[20px] left-0' />
 				</section>
 			</div>
 		</Layout>

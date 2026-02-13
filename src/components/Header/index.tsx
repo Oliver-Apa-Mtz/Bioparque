@@ -43,18 +43,18 @@ const Header = () => {
 	}, []);
 
 	return (
-		<header className={`header w-screen fixed top-0 left-0 z-30 ${isHeaderFixed ? 'bg-white pt-[20px] pb-[10px] header-fixed' : 'pt-[30px]'} ${menuMovil ? 'header--active' : ''}`}>
+		<header className={`header w-screen fixed top-0 left-0 z-30 ${isHeaderFixed ? 'pt-[20px] pb-[10px] header-fixed bg-white' : 'pt-[30px] bg-gradient'} ${menuMovil ? 'header--active' : ''}`}>
 			<div className="max-w-[1360px] mx-auto px-[20px] flex justify-between h-full">
 				<div>
 					<Link to="/">
-						<img className={`header-logo h-[175px] ${isHeaderFixed ? 'h-[50px] invert' : ''}`} src={Logo} alt="Logo BioParc - El Encanto" loading="lazy" />
+						<img className={`header-logo ${isHeaderFixed ? 'h-[50px] invert' : 'h-[83px]'}`} src={Logo} alt="Logo BioParc - El Encanto" loading="lazy" />
 					</Link>
 				</div>
 				{!menuMovil && (
 					<nav className={`hidden lg:flex gap-4 xl:gap-6 text-sm text-text ${isHeaderFixed ? 'text-black' : 'text-white'}`}>
-						<Link to="/" className={`header__nav__item h-max plus-jakarta-sans-300 uppercase pt-3 hover:text-red ${location.pathname === '/' ? 'plus-jakarta-sans-600' : ''}`}>Home</Link>
+						<Link to="/" className={`header__nav__item h-max plus-jakarta-sans-300 uppercase pt-3 hover:text-red ${location.pathname === '/' ? 'plus-jakarta-sans-600 active-link' : ''}`}>Home</Link>
 						<div className="relative group h-max mt-3">
-							<div className={`header__nav__item plus-jakarta-sans-300 uppercase hover:text-red cursor-pointer ${location.pathname === '/bioparque' ? 'plus-jakarta-sans-600' : ''}`}>El bioparque</div>
+							<div className={`header__nav__item plus-jakarta-sans-300 uppercase hover:text-red cursor-pointer ${location.pathname === '/bioparque' || location.pathname === '/reglamento' || location.pathname === '/faq' ? 'plus-jakarta-sans-600 active-link' : ''}`}>El bioparque</div>
 							<div className="absolute -bottom-[130px] left-0 bg-white shadow-lg rounded-lg py-2 min-w-[150px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
 								<Link to="/bioparque" className="block px-4 py-2 text-sm text-principal hover:text-red">Bioparque</Link>
 								<Link to="/reglamento" className="block px-4 py-2 text-sm text-principal hover:text-red">Reglamento</Link>
@@ -62,16 +62,16 @@ const Header = () => {
 							</div>
 						</div>
 						<div className="relative group h-max mt-3">
-							<div className={`header__nav__item plus-jakarta-sans-300 uppercase hover:text-red cursor-pointer ${location.pathname === '/experiencias-areas' ? 'plus-jakarta-sans-600' : ''}`}>Experiencias y áreas</div>
+							<div className={`header__nav__item plus-jakarta-sans-300 uppercase hover:text-red cursor-pointer ${location.pathname === '/experiencias-areas' || location.pathname === '/areas' || location.pathname === '/hospedaje' ? 'plus-jakarta-sans-600 active-link' : ''}`}>Experiencias y áreas</div>
 							<div className="absolute -bottom-[130px] left-0 bg-white shadow-lg rounded-lg py-2 min-w-[150px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
 								<Link to="/areas" className="block px-4 py-2 text-sm text-principal hover:text-red">Áreas</Link>
 								<Link to="/experiencias-areas" className="block px-4 py-2 text-sm text-principal hover:text-red">Experiencias</Link>
 								<Link to="/hospedaje" className="block px-4 py-2 text-sm text-principal hover:text-red">Hospedaje</Link>
 							</div>
 						</div>
-						<Link to="/tu-visita" className={`header__nav__item h-max plus-jakarta-sans-300 uppercase pt-3 hover:text-red  ${location.pathname === '/tu-visita' ? 'plus-jakarta-sans-600' : ''}`}>Tu visita</Link>
-						<Link to="/blog" className={`header__nav__item h-max plus-jakarta-sans-300 uppercase pt-3 hover:text-red  ${location.pathname === '/blog' ? 'plus-jakarta-sans-600' : ''}`}>Blog</Link>
-						<Link to="/contacto" className={`header__nav__item h-max plus-jakarta-sans-300 uppercase pt-3 hover:text-red  ${location.pathname === '/contacto' ? 'plus-jakarta-sans-600' : ''}`}>Contacto</Link>
+						<Link to="/tu-visita" className={`header__nav__item h-max plus-jakarta-sans-300 uppercase pt-3 hover:text-red  ${location.pathname === '/tu-visita' ? 'plus-jakarta-sans-600 active-link' : ''}`}>Tu visita</Link>
+						<Link to="/blog" className={`header__nav__item h-max plus-jakarta-sans-300 uppercase pt-3 hover:text-red  ${location.pathname === '/blog' ? 'plus-jakarta-sans-600 active-link' : ''}`}>Blog</Link>
+						<Link to="/contacto" className={`header__nav__item h-max plus-jakarta-sans-300 uppercase pt-3 hover:text-red  ${location.pathname === '/contacto' ? 'plus-jakarta-sans-600 active-link' : ''}`}>Contacto</Link>
 						<Link to="/contacto" className={`button ${isHeaderFixed ? 'button--secondary' : 'button--primary'} button--small plus-jakarta-sans-600 uppercase`}>Compra entradas</Link>
 						<Link to="/contacto" className={`button ${isHeaderFixed ? 'button--secondary' : 'button--primary'} button--small plus-jakarta-sans-600 uppercase`}>Reserva cabaña</Link>
 					</nav>

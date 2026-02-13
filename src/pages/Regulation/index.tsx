@@ -8,6 +8,7 @@ import Accordion from '../../components/Accordion';
 
 import BannerRegulation from '../../assets/img/banner-reglamento.webp';
 import Zebra from '../../assets/img/zebra.svg';
+import MapEffect2 from '../../assets/img/map-effect-3.png';
 
 const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, children }) => {
 	const items = React.Children.toArray(children)
@@ -16,7 +17,7 @@ const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, c
 		delay: 200,
 		opacity: open ? 1 : 0,
 		x: open ? 0 : -20,
-		height: open ? 110 : 80,
+		height: open ? 130 : 80,
 		from: { opacity: 0, x: -20, height: 80 },
 	})
 	return (
@@ -55,7 +56,7 @@ const items = [
 
 const Regulation = () => {
 	const [title, setTitle] = useState(false);
-	const [topWolf, setTopWolf] = useState(-891);
+	const [topWolf, setTopWolf] = useState(-991);
 	const isMobile = window.innerWidth <= 1023;
 	const [isVisible, setIsVisible] = useState(false);
 	const [isVisibleBanner2, setIsVisibleBanner2] = useState(false);
@@ -71,11 +72,11 @@ const Regulation = () => {
 
 	const handleScroll = () => {
 		const scrollPosition = window.scrollY;
-		if (scrollPosition > 640 || isMobile) {
-			setTopWolf(-571);
+		if (scrollPosition > 320 || isMobile) {
+			setTopWolf(-830);
 		} else {
 			const parallaxSpeed = 0.5;
-			const newTopWolf = -891 + (scrollPosition * parallaxSpeed);
+			const newTopWolf = -991 + (scrollPosition * parallaxSpeed);
 			setTopWolf(newTopWolf);
 		}
 	};
@@ -101,8 +102,8 @@ const Regulation = () => {
 					<div className="w-full max-w-[1300px] mx-auto">
 						<div className="relative z-20">
 							<Trail open={title}>
-								<span className="text-[100px] text-secundario mb-8 leading-[110px] uppercase font-ruina title-shadow">Reglamento</span>
-								<span className="text-[100px] text-secundario mb-8 leading-[110px] uppercase font-ruina title-shadow">De visita</span>
+								<span className="text-[129px] text-white mb-10 leading-[130px] uppercase font-ruina title-shadow">Reglamento</span>
+								<span className="text-[129px] text-white mb-10 leading-[130px] uppercase font-ruina title-shadow">De visita</span>
 							</Trail>
 							<animated.div style={!isMobile ? animationPropsBanner1 : {}} className="animated-element">
 								<p className="text-white text-[49px] montserrat-300 wfull max-w-[650px] leading-[48px]">
@@ -113,9 +114,9 @@ const Regulation = () => {
 					</div>
 				</section>
 
-				<section className="w-full mb-10 relative">
+				<section className="w-full mb-20 relative">
 					<animated.div style={!isMobile ? animationPropsBanner2 : {}} className="relative animated-element w-full">
-						<div className='absolute w-[1600px] right-0 z-10 zebra-animate' style={{ top: topWolf + 'px' }}>
+						<div className='absolute w-[1900px] right-0 z-10 zebra-animate' style={{ top: topWolf + 'px' }}>
 							<img src={Zebra} alt="" className='w-full' />
 						</div>
 					</animated.div>
@@ -127,6 +128,7 @@ const Regulation = () => {
 							<Accordion items={items} />
 						</div>
 					</div>
+					<img src={MapEffect2} alt="" className='w-full absolute -bottom-[82px] left-0' />
 				</section>
 
 			</div>

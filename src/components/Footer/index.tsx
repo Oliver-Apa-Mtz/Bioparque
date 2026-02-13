@@ -3,10 +3,24 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
 	return (
-		<footer className="w-full bg-footer text-gray-300 py-12 px-6 relative">
+		<footer className="w-full bg-black text-gray-300 py-12 px-6 relative">
 			<div className="w-full max-w-[1320px] px-[20px] mx-auto flex justify-between">
 				<div>
 					<img src={Logo} alt="Bioparc El Encanto" className="w-[257px]" />
+				</div>
+				<div>
+					<p className='font-ruina text-[21px] text-white pb-4 '>Ligas de interes</p>
+					<div>
+						<a href="" className='text-[13px] text-white hover:text-[#C7D5C5] montserrat-300 pr-8 block underline mb-2'>
+							EL ENCANTO DESARROLLOS
+						</a>
+						<a href="" className='text-[13px] text-white hover:text-[#C7D5C5] montserrat-300 pr-8 block underline mb-2'>
+							Secretaria de Turismo de Sinaloa
+						</a>
+						<a href="" className='text-[13px] text-white hover:text-[#C7D5C5] montserrat-300 pr-8 block underline mb-2'>
+							Visit Sinaloa
+						</a>
+					</div>
 				</div>
 				<div className='w-full max-w-[500px]'>
 					<div className='pb-4 border-b border-gray flex justify-between'>

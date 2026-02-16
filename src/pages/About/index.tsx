@@ -19,7 +19,6 @@ import Icon3 from '../../assets/img/icon-3.svg';
 import Icon4 from '../../assets/img/icon-4.svg';
 import Icon5 from '../../assets/img/icon-5.svg';
 import Icon6 from '../../assets/img/icon-6.svg';
-import MapEffect2 from '../../assets/img/map-effect-3.png';
 
 const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, children }) => {
 	const items = React.Children.toArray(children)
@@ -246,7 +245,6 @@ const About = () => {
 					<div className="w-full max-w-[1360px] mx-auto px-[20px] pt-4">
 						<CalendarCustom />
 					</div>
-					<img src={MapEffect2} alt="" className='w-full absolute -bottom-[102px] left-0' />
 				</section>
 
 			</div >

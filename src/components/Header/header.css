@@ -16,11 +16,37 @@
 	height: 3px;
 	background: #9F2942;
 }
+.header__nav__item--menu{
+	position: relative;
+}
+.header__nav__item--menu::before{
+	content: "";
+	position: absolute;
+	top: 5px;
+	right: -12px;
+	transform: rotate(-45deg);
+	width: 7px;
+	height: 7px;
+	border-left: 1px solid white;
+	border-bottom: 1px solid white;
+}
+.header__nav__item--menu:hover::before{
+	border-color: #9F2942;
+}
+header .group:hover .header__nav__item--menu, header .group:hover .header__nav__item--menu::before{
+	border-color: #9F2942;
+	color: #9F2942;
+}
 @media (max-width: 1200px) {
 	.header{
 		padding-top: 20px;
 	}
 	.header-logo {
 		height: 50px;
+	}
+	.button{
+		font-size: 10px;
+		padding-left: 6px;
+		padding-right: 6px;
 	}
 }

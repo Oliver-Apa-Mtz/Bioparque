@@ -10,6 +10,10 @@
   font-weight: normal;
   font-style: normal;
 }
+.body-contain{
+	width: 100vw;
+	overflow-x: hidden;
+}
 .montserrat-300 {
 	font-family: "Montserrat", sans-serif;
 	font-optical-sizing: auto;

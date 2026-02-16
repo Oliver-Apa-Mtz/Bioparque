@@ -22,7 +22,6 @@ import BannerMap from '../../assets/img/map-dark.webp';
 import AnimalMap from '../../assets/img/animal-3.webp';
 import Arrow from '../../assets/img/arrow.svg';
 import ButtonArrow from '../../assets/img/arrow-button.svg';
-import MapEffect2 from '../../assets/img/map-effect-3.png';
 
 const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, children }) => {
 	const items = React.Children.toArray(children)
@@ -137,7 +136,7 @@ const Home = () => {
 								<span className="text-[129px] text-white mb-19 leading-[130px] uppercase font-ruina title-shadow">la vida salvaje.</span>
 							</Trail>
 							<animated.div style={!isMobile ? animationPropsBanner1 : {}} className="animated-element">
-								<p className="text-white text-[24px] md:text-[35px] xl:text-[49px] montserrat-300 mt-[30px] md:mt-[0px]">
+								<p className="w-full md:w-[500px] lg:w-full text-white text-[24px] md:text-[35px] xl:text-[49px] montserrat-300 mt-[30px] md:mt-[0px]">
 									¡Disfruta de nuestro parque en Mazatlán!
 								</p>
 								<div className='flex gap-4 mt-4 justify-center md:justify-start flex-wrap sm:flex-nowrap'>
@@ -162,27 +161,27 @@ const Home = () => {
 						<h2 className="text-[36px] text-principal mb-8 uppercase text-center font-ruina title-line relative tracking-[6px]">
 							Experiencias y Áreas
 						</h2>
-						<h3 className="text-principal text-[40px] text-center montserrat-300">
+						<h3 className="text-principal text-[24px] md:text-[35px] xl:text-[40px] text-center montserrat-300">
 							Conoce a los habitantes más fascinantes del Bioparc El Encanto
 						</h3>
-						<div className='w-full flex justify-between gap-4 pt-10'>
-							<div className='w-[26%]'>
-								<img src={Card1} alt="" className='h-[500px] object-cover' />
+						<div className='w-full flex flex-wrap md:flex-nowrap justify-between gap-4 pt-10 carrousel-container'>
+							<div className='w-full md:w-[26%] carrousel-item'>
+								<img src={Card1} alt="" className='w-full md:w-auto h-[300px] lg:h-[400px] 2xl:h-[500px] object-cover' />
 								<p className='text-principal plus-jakarta-sans-600 text-[36px] my-4'>Jirafas</p>
 								<p className='text-principal plus-jakarta-sans-400 text-[20px] leading-[25px]'>
 									Acércate a nuestras jirafas y
 									descubre curiosidades de su vida.
 								</p>
 							</div>
-							<div className='w-[48%]'>
-								<img src={Card2} alt="" className='h-[500px] object-cover w-[820px]' />
+							<div className='w-full md:w-[48%] carrousel-item'>
+								<img src={Card2} alt="" className='w-full h-[300px] lg:h-[400px] 2xl:h-[500px] object-cover md:w-[820px]' />
 								<p className='text-principal plus-jakarta-sans-600 text-[36px] my-4'>Elefantes</p>
 								<p className='text-principal plus-jakarta-sans-400 text-[20px] leading-[25px]'>
 									Admira a los gigantes de la sabana en un hábitat seguro y educativo.
 								</p>
 							</div>
-							<div className='w-[26%]'>
-								<img src={Card3} alt="" className='h-[500px] object-cover' />
+							<div className='w-full md:w-[26%] carrousel-item'>
+								<img src={Card3} alt="" className='w-full md:w-auto h-[300px] lg:h-[400px] 2xl:h-[500px] object-cover' />
 								<p className='text-principal plus-jakarta-sans-600 text-[36px] my-4'>Felinos</p>
 								<p className='text-principal plus-jakarta-sans-400 text-[20px] leading-[25px]'>
 									Símbolos de fuerza y majestuosidad en su hábitat
@@ -195,18 +194,18 @@ const Home = () => {
 					</div>
 				</section>
 
-				<section className='w-full relative mt-[400px] pt-[70px] pb-[150px]'>
+				<section className='w-full relative mt-0 md:mt-[400px] pt-[70px] pb-[0px] xl:pb-[150px]'>
 					<animated.div style={!isMobile ? animationPropsBanner3 : {}} className="relative animated-element w-full z-10">
-						<img src={Ave1} className='absolute w-[467px] right-1/3 z-10 -top-[370px]' alt="" />
+						<img src={Ave1} className='relative md:absolute mx-auto md:mx-0 w-[280px] sm:w-[400px] md:w-[467px] right-0 md:right-1/3 z-10 top-0 md:-top-[370px]' alt="" />
 					</animated.div>
 					<div className="w-full max-w-[1360px] mx-auto px-[20px] relative z-20 pt-20">
-						<div className='flex justify-between gap-4'>
+						<div className='block xl:flex justify-center 2xl:justify-between gap-4'>
 							<animated.div style={!isMobile ? animationPropsBanner6 : {}} className="animated-element">
-								<div className='w-[560px]'>
-									<p className='font-ruina text-[36px] text-principal mb-2'>Tours Guiados</p>
-									<p className='montserrat-300 text-principal text-[40px] leading-[42px]'>Acompañado de <br></br>guías expertos,</p>
-									<h4 className='montserrat-800 text-principal text-[40px] leading-[42px] uppercase mb-4'>Descubre cada rincón del Bioparque.</h4>
-									<p className='montserrat-600 text-principal text-[22px]'>
+								<div className='w-full md:w-[560px] mx-auto xl:mx-0'>
+									<p className='font-ruina text-[36px] text-principal mb-2 text-center xl:text-left'>Tours Guiados</p>
+									<p className='montserrat-300 text-principal text-[24px] md:text-[40px] leading-[42px] text-center xl:text-left uppercase mb-4'>Acompañado de <br></br>guías expertos,</p>
+									<h4 className='montserrat-800 text-principal text-[24px] md:text-[40px] leading-[42px] uppercase mb-4 text-center xl:text-left'>Descubre cada rincón del Bioparque.</h4>
+									<p className='montserrat-600 text-principal text-[22px] text-center xl:text-left'>
 										Aprende sobre las especies, su importancia
 										y disfruta de una experiencia educativa y
 										divertida.
@@ -217,10 +216,10 @@ const Home = () => {
 									</ul>
 								</div>
 							</animated.div>
-							<div className='relative'>
-								<img src={Card4} alt="" className='h-[420px] object-cover relative z-20' />
+							<div className='relative w-full md:w-[560px] xl:w-auto mx-auto xl:mx-0 mt-20 xl:mt-0'>
+								<img src={Card4} alt="" className='w-full xl:w-auto h-[360px] 2xl:h-[420px] object-cover relative z-20' />
 								<animated.div style={!isMobile ? animationPropsBanner4 : {}} className="relative animated-element w-full z-10">
-									<img src={Ave2} className='absolute w-[312px] -right-[200px] z-10 -bottom-[120px]' alt="" />
+									<img src={Ave2} className='hidden md:block absolute w-[312px] -right-[200px] z-10 -bottom-[120px]' alt="" />
 								</animated.div>
 							</div>
 						</div>
@@ -229,16 +228,16 @@ const Home = () => {
 
 				<section className='w-full bg-cover bg-center relative pb-[70px]' style={{ backgroundImage: `url(${WaveBlue})` }}>
 					<animated.div style={!isMobile ? animationPropsBanner7 : {}} className="animated-element">
-						<div className="w-full max-w-[1360px] mx-auto px-[20px] pt-[200px]">
+						<div className="w-full max-w-[1360px] mx-auto px-[20px] pt-[50px] md:pt-[100px] lg:pt-[200px]">
 							<div className='w-full max-w-[900px] text-center mx-auto mb-20'>
 								<p className='font-ruina text-[36px] text-black mb-2'>Blog</p>
-								<p className='montserrat-300 text-black text-[52px] leading-[50px] -tracking-[1px]'>
+								<p className='montserrat-300 text-black text-[24px] md:text-[52px] leading-[50px] -tracking-[1px]'>
 									conservación, educación ambiental
 									y novedades <span className='montserrat-800 uppercase'>del Bioparque</span>
 								</p>
 							</div>
-							<div className='flex justify-between gap-4 '>
-								<div className='bg-cover bg-center w-[628px] h-[400px] text-white flex p-6 items-end relative' style={{ backgroundImage: `url(${Card5})` }}>
+							<div className='block md:flex justify-between gap-4 '>
+								<div className='bg-cover bg-center w-full max-w-[628px] mx-auto md:mx-0 mb-10 md:mb-0 h-[400px] text-white flex p-6 items-end relative pb-[45px]' style={{ backgroundImage: `url(${Card5})` }}>
 									<div className='w-full max-w-[440px]'>
 										<p className='plus-jakarta-sans-300 text-[38px]'>Sobre Los Osos</p>
 										<p className='plus-jakarta-sans-300 text-[16px]'>
@@ -250,7 +249,7 @@ const Home = () => {
 										<img src={Arrow} alt="" />
 									</div>
 								</div>
-								<div className='bg-cover bg-center w-[628px] h-[400px] text-white flex p-6 items-end relative' style={{ backgroundImage: `url(${Card6})` }}>
+								<div className='bg-cover bg-center w-full max-w-[628px] mx-auto md:mx-0 h-[400px] text-white flex p-6 items-end relative pb-[45px]' style={{ backgroundImage: `url(${Card6})` }}>
 									<div className='w-full max-w-[440px]'>
 										<p className='plus-jakarta-sans-300 text-[38px]'>Sobre Los Elefantes</p>
 										<p className='plus-jakarta-sans-300 text-[16px]'>
@@ -267,15 +266,15 @@ const Home = () => {
 					</animated.div>
 				</section>
 
-				<section className='w-full bg-cover bg-center relative pb-[100px]' style={{ backgroundImage: `url(${BannerMap})` }}>
+				<section className='w-full bg-cover bg-center relative pb-[40px] md:pb-[100px]' style={{ backgroundImage: `url(${BannerMap})` }}>
 					<animated.div style={!isMobile ? animationPropsBanner5 : {}} className="relative animated-element w-full z-10">
-						<img src={AnimalMap} className='absolute w-[262px] right-[250px] z-10 top-0' alt="" />
+						<img src={AnimalMap} className='hidden md:block absolute w-[262px] right-[250px] z-10 top-0' alt="" />
 					</animated.div>
-					<div className="w-full max-w-[1360px] mx-auto px-[20px] pt-[150px]">
+					<div className="w-full max-w-[1360px] mx-auto px-[20px] pt-[40px] md:pt-[150px]">
 						<div className='w-full max-w-[900px] text-center mx-auto mb-16'>
 							<animated.div style={!isMobile ? animationPropsBanner8 : {}} className="animated-element">
 								<p className='font-ruina text-[36px] text-white mb-2'>Mapa</p>
-								<p className='montserrat-300 text-white text-[52px] leading-[65px] -tracking-[1px]'>
+								<p className='montserrat-300 text-white text-[24px] md:text-[52px] leading-[65px] -tracking-[1px]'>
 									Planea tu recorrido con nuestro <span className='montserrat-800 uppercase'>mapa descargable.</span>
 								</p>
 								<p className='montserrat-300 text-white text-[19px] mt-6 mb-10 w-full max-w-[500px] mx-auto'>
@@ -286,7 +285,7 @@ const Home = () => {
 							</animated.div>
 						</div>
 					</div>
-					<img src={MapEffect2} alt="" className='w-full absolute -bottom-[20px] left-0' />
+
 				</section>
 
 			</div>

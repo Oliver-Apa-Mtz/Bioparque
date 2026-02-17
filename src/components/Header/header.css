@@ -48,5 +48,6 @@ header .group:hover .header__nav__item--menu, header .group:hover .header__nav__
 		font-size: 10px;
 		padding-left: 6px;
 		padding-right: 6px;
+		padding-top: 15px;
 	}
 }

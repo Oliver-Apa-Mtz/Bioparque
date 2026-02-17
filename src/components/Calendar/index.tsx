@@ -27,6 +27,12 @@ const eventos = [
 
 const CalendarCustom = () => {
 	const [value, setValue] = useState<Value>(new Date());
+	const [activeStartDate, setActiveStartDate] = useState(new Date(2025, 8, 1));
+	
+	const getMonthYear = () => {
+		return activeStartDate.toLocaleDateString('es-ES', { month: 'long', year: 'numeric' });
+	};
+	
 	const getTileClass = ({ date }: { date: Date }) => {
 		if (eventos[0].dates.some(d => d.toDateString() === date.toDateString())) {
 			return "bg-yellow";
@@ -41,22 +47,22 @@ const CalendarCustom = () => {
 	};
 	return (
 		<div>
-			<div>
+			<div className='space-y-2 mb-6'>
 				<div className='flex items-center'>
-					<div className='w-[23px] h-[23px] bg-[#FEB826] mr-2'></div>
-					<p className='montserrat-600 text-principal text-[22px]'>Temporada de verano.</p>
+					<div className='w-[23px] h-[23px] bg-[#FEB826] mr-2 flex-shrink-0'></div>
+					<p className='montserrat-600 text-principal text-[14px] md:text-[22px]'>Temporada de verano.</p>
 				</div>
 				<div className='flex items-center'>
-					<div className='w-[23px] h-[23px] bg-[#CEC5A8] mr-2'></div>
-					<p className='montserrat-600 text-principal text-[22px]'>Miércoles escolares (descuentos para grupos educativos).</p>
+					<div className='w-[23px] h-[23px] bg-[#CEC5A8] mr-2 flex-shrink-0'></div>
+					<p className='montserrat-600 text-principal text-[14px] md:text-[22px]'>Miércoles escolares (descuentos para grupos educativos).</p>
 				</div>
 				<div className='flex items-center'>
-					<div className='w-[23px] h-[23px] bg-green mr-2'></div>
-					<p className='montserrat-600 text-principal text-[22px]'>Eventos de conservación (charlas y talleres).</p>
+					<div className='w-[23px] h-[23px] bg-green mr-2 flex-shrink-0'></div>
+					<p className='montserrat-600 text-principal text-[14px] md:text-[22px]'>Eventos de conservación (charlas y talleres).</p>
 				</div>
 			</div>
-			<p className='montserrat-600 text-principal text-[40px] text-center my-6'>Eventos para Septiembre 2025</p>
-			<div className='flex justify-between h-[70px] border border-gray mb-8'>
+			<p className='montserrat-600 text-principal text-[24px] md:text-[40px] text-center my-6 capitalize'>Eventos para {getMonthYear()}</p>
+			<div className='hidden md:flex justify-between h-[70px] border border-gray mb-8'>
 				<div className='flex items-center px-4'>
 					<img src={IconSearch} alt="" />
 					<input type="text" className='outline-none montserrat-600 text-principal text-[22px]' />
@@ -68,19 +74,20 @@ const CalendarCustom = () => {
 					<div className='flex justify-center items-center border-green h-full montserrat-600 text-principal text-[16px] cursor-pointer'>Día</div>
 				</div>
 			</div>
-			<div className="flex justify-center mb-4">
+			<div className="hidden md:flex justify-center mb-4">
 				<img src={ButtonArrowSmall} alt="" className="w-[16px] invert rotate-90" />
 			</div>
 			<Calendar
 				onChange={setValue}
 				value={value}
 				view="month"
-				defaultActiveStartDate={new Date(2025, 8, 1)} // Septiembre 2025
+				defaultActiveStartDate={new Date(2025, 8, 1)}
+				onActiveStartDateChange={({ activeStartDate }) => activeStartDate && setActiveStartDate(activeStartDate)}
 				locale="es-ES"
 				tileClassName={getTileClass}
 			/>
-			<div className="flex justify-end mt-10">
-				<div className='button button--secondary font-ruina h-[46px]'>Suscribirse al calendario</div>
+			<div className="flex justify-center md:justify-end mt-6 md:mt-10">
+				<div className='button button--secondary font-ruina h-[46px] text-[14px] md:text-base'>Suscribirse al calendario</div>
 			</div>
 		</div>
 	)

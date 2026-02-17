@@ -17,7 +17,7 @@ const Accordion = ({ items }: any) => {
 						onClick={() => toggle(index)}
 						className="w-full flex justify-between items-center text-left focus:outline-none"
 					>
-						<span className="montserrat-300 text-[33px] leading-[42px] text-principal">
+						<span className="montserrat-300 text-[24px] md:text-[33px] leading-[26px] md:leading-[42px] text-principal">
 							{item.title}
 						</span>
 						{openIndex === index ? (

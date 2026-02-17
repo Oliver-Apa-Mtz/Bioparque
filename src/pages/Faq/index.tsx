@@ -98,15 +98,15 @@ const Faq = () => {
 	return (
 		<Layout>
 			<div>
-				<section className="w-full h-[1200px] px-20 bg-cover bg-center relative pt-[360px]" style={{ backgroundImage: `url(${BannerFaq})` }} role="banner">
+				<section className="banner-ppal w-full h-[1200px] px-20 bg-cover bg-center relative pt-[360px]" style={{ backgroundImage: `url(${BannerFaq})` }} role="banner">
 					<div className="w-full max-w-[1300px] mx-auto">
-						<div className="relative z-20">
+						<div className="relative z-20 text-center md:text-left">
 							<Trail open={title}>
 								<span className="text-[129px] text-white mb-10 leading-[130px] uppercase font-ruina title-shadow">Preguntas</span>
 								<span className="text-[129px] text-white mb-10 leading-[130px] uppercase font-ruina title-shadow">Frecuentes</span>
 							</Trail>
 							<animated.div style={!isMobile ? animationPropsBanner1 : {}} className="animated-element">
-								<p className="text-white text-[49px] montserrat-300 wfull max-w-[650px] leading-[48px]">
+								<p className="w-full md:w-[500px] lg:w-full text-white text-[24px] md:text-[35px] xl:text-[49px] montserrat-300 mt-[30px] md:mt-[0px]">
 									Todo lo que necesitas saber
 								</p>
 							</animated.div>
@@ -116,11 +116,11 @@ const Faq = () => {
 
 				<section className="w-full mb-20 relative">
 					<animated.div style={!isMobile ? animationPropsBanner2 : {}} className="relative animated-element w-full">
-						<div className='absolute w-[1600px] right-0 z-10 giraffe-animate' style={{ top: topWolf + 'px' }}>
+						<div className='absolute w-[800px] md:w-[1300px] lg:w-[1600px] right-0 z-10 giraffe-animate' style={{ top: topWolf + 'px' }}>
 							<img src={Giraffe} alt="" className='w-full' />
 						</div>
 					</animated.div>
-					<div className="w-full max-w-[1360px] mx-auto px-[20px] relative z-20 pt-20">
+					<div className="w-full max-w-[1360px] mx-auto px-[20px] relative z-20 pt-0 sm:pt-10 lg:pt-20">
 						<h2 className="text-[36px] text-principal mb-20 uppercase text-center font-ruina title-line relative tracking-[6px]">
 							Faq
 						</h2>

@@ -39,6 +39,23 @@
 	border-radius: 0px !important;
 	border: 1px solid #E1E1DB !important;
 }
+
+@media (max-width: 768px) {
+	.react-calendar__tile {
+		width: auto;
+		height: 60px;
+		padding: 0.5rem;
+	}
+	.react-calendar__navigation__label__labelText {
+		font-size: 18px;
+	}
+	.react-calendar__navigation__arrow {
+		font-size: 24px;
+	}
+	.react-calendar__navigation__label{
+		color: white !important;
+	}
+}
 .react-calendar abbr{
 	color: #272D2D;
 	text-align: left;

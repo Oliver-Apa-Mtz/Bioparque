@@ -104,15 +104,15 @@ const About = () => {
 	return (
 		<Layout>
 			<div>
-				<section className="w-full h-[1200px] px-20 bg-cover bg-center relative pt-[360px]" style={{ backgroundImage: `url(${BannerAbout})` }} role="banner">
+				<section className="banner-ppal w-full h-[1200px] px-20 bg-cover bg-center relative pt-[360px]" style={{ backgroundImage: `url(${BannerAbout})` }} role="banner">
 					<div className="w-full max-w-[1300px] mx-auto">
-						<div className="relative z-20">
+						<div className="relative z-20 text-center md:text-left">
 							<Trail open={title}>
 								<span className="text-[129px] text-white mb-10 leading-[130px] uppercase font-ruina title-shadow">Bioparc</span>
 								<span className="text-[129px] text-white mb-10 leading-[130px] uppercase font-ruina title-shadow">Mazatlán</span>
 							</Trail>
 							<animated.div style={!isMobile ? animationPropsBanner1 : {}} className="animated-element">
-								<p className="text-white text-[49px] montserrat-300 wfull max-w-[650px] leading-[48px]">
+								<p className="text-white text-[24px] md:text-[49px] montserrat-300 wfull max-w-[650px] leading-[28px] md:leading-[48px] mt-[30px] md:mt-[0px]">
 									Un espacio de conservación, diversión y aprendizaje en familia.
 								</p>
 							</animated.div>
@@ -122,22 +122,22 @@ const About = () => {
 
 				<section className="w-full mb-10 relative">
 					<animated.div style={!isMobile ? animationPropsBanner2 : {}} className="relative animated-element w-full">
-						<div className='absolute w-[1900px] right-0 z-10 lion-animate' style={{ top: topWolf + 'px' }}>
+						<div className='absolute w-[1000px] md:w-[1500px] lg:w-[1900px] -right-[200px] xl:right-0 z-10 lion-animate' style={{ top: topWolf + 'px' }}>
 							<img src={Lion} alt="" className='w-full' />
 						</div>
 					</animated.div>
-					<div className="w-full max-w-[1360px] mx-auto px-[20px] relative z-20 pt-20">
+					<div className="w-full max-w-[1360px] mx-auto px-[20px] relative z-20 pt-0 sm:pt-10 lg:pt-20">
 						<h2 className="text-[36px] text-principal mb-8 uppercase text-center font-ruina title-line relative tracking-[6px]">
 							Conoce más sobre nosotros
 						</h2>
-						<div className='w-full bg-[#314B32] flex justify-end items-center pr-6 py-20 bg-cover bg-center mt-[200px] relative' style={{ backgroundImage: `url(${BannerGreen})` }}>
-							<animated.div style={!isMobile ? animationPropsBanner3 : {}} className="animated-element w-[728px] absolute -top-[110px] -left-[60px]">
+						<div className='w-full bg-[#314B32] block lg:flex justify-end items-center pr-0 lg:pr-6 py-20 bg-cover bg-center mt-[200px] relative' style={{ backgroundImage: `url(${BannerGreen})` }}>
+							<animated.div style={!isMobile ? animationPropsBanner3 : {}} className="animated-element w-[280px] sm:w-[500px] xl:w-[728px] relative lg:absolute mx-auto lg:mx-0 -top-[200px] lg:-top-[70px] xl:-top-[110px] left-0 lg:-left-[20px] xl:-left-[60px]">
 								<img src={Animal1} alt="" />
 							</animated.div>
 							<animated.div style={!isMobile ? animationPropsBanner4 : {}} className="animated-element">
-								<div className='w-full max-w-[590px] text-white text-right'>
-									<p className='font-ruina text-[36px] tracking-[6px] float-right border-b-[3px] border-red mb-8'>¿Qué es Bioparque?</p>
-									<p className='montserrat-300 text-[40px] leading-[44px] my-8'>
+								<div className='w-full max-w-[590px] px-4 md:px-0 mx-auto lg:mx-0 text-white text-center lg:text-right -mt-[180px] lg:-mt-0'>
+									<p className='font-ruina text-[36px] tracking-[6px] float-none lg:float-right border-b-[3px] border-red mb-8'>¿Qué es Bioparque?</p>
+									<p className='montserrat-300 text-[24px] md:text-[40px] leading-[26px] md:leading-[44px] my-8'>
 										<span className='montserrat-800'>Bioparc Mazatlán</span> es un centro de conservación
 										y recreación diseñado para acercar a las personas
 										a la naturaleza.
@@ -156,23 +156,23 @@ const About = () => {
 					</div>
 				</section>
 
-				<section className='w-full relative mt-[360px] pt-[70px] pb-[150px]'>
+				<section className='w-full relative mt-[0px] xl:mt-[360px] pt-[0px] lg:pt-[70px] pb-0 lg:pb-[150px]'>
 					<div className='absolute w-full right-0 -top-[780px] z-10 ave-animate'>
 						<img src={BlueEffect} className='w-full' alt="" />
 					</div>
 					<div className="w-full max-w-[1360px] mx-auto px-[20px] relative z-20 pt-20">
-						<div className='flex justify-between gap-4'>
-							<div className='w-full max-w-[648px] text-center'>
+						<div className='block lg:flex justify-between gap-4'>
+							<div className='w-full max-w-[648px] mx-auto lg:mx-0 mb-20 lg:mb-0 text-center'>
 								<div className='bg-brown relative mb-20'>
-									<img src={BrownEffect} alt="" className='w-full absolute -top-[37px] left-0' />
-									<p className='font-ruina text-[36px] text-white h-[83px] flex items-center justify-center'>Horarios</p>
-									<img src={BrownEffect} alt="" className='w-full absolute -bottom-[37px] left-0 rotate-180' />
+									<img src={BrownEffect} alt="" className='w-full h-[37px] absolute -top-[36px] left-0' />
+									<p className='font-ruina text-[24px] md:text-[36px] text-white h-[50px] md:h-[83px] flex items-center justify-center'>Horarios</p>
+									<img src={BrownEffect} alt="" className='w-full h-[37px] absolute -bottom-[36px] left-0 rotate-180' />
 								</div>
 								<img src={Icon1} alt="" className='mx-auto mb-4' />
-								<p className='montserrat-300 text-[33px] leading-[42px] text-principal'>El <b className='montserrat-800'>Bioparc Mazatlán</b></p>
-								<p className='montserrat-300 text-[33px] leading-[42px] text-principal'>abre todos los días</p>
-								<p className='montserrat-300 text-[33px] leading-[42px] text-principal'>de <b className='montserrat-800'>9:00</b> a.m. a <b className='montserrat-800'>6:00</b> p.m.</p>
-								<p className='montserrat-300 text-[33px] my-8 text-principal'>
+								<p className='montserrat-300 text-[24px] md:text-[33px] leading-[26px] md:leading-[42px] text-principal'>El <b className='montserrat-800'>Bioparc Mazatlán</b></p>
+								<p className='montserrat-300 text-[24px] md:text-[33px] leading-[26px] md:leading-[42px] text-principal'>abre todos los días</p>
+								<p className='montserrat-300 text-[24px] md:text-[33px] leading-[26px] md:leading-[42px] text-principal'>de <b className='montserrat-800'>9:00</b> a.m. a <b className='montserrat-800'>6:00</b> p.m.</p>
+								<p className='montserrat-300 text-[24px] md:text-[33px] my-8 text-principal'>
 									Durante días festivos y temporadas especiales
 									extendemos nuestro horario para que disfrutes
 									más de la experiencia.
@@ -184,55 +184,55 @@ const About = () => {
 									del parque.
 								</p>
 							</div>
-							<div className='w-full max-w-[648px] text-center'>
+							<div className='w-full max-w-[648px] mx-auto lg:mx-0 text-center'>
 								<div className='bg-brown relative mb-20'>
-									<img src={BrownEffect} alt="" className='w-full absolute -top-[37px] left-0' />
-									<p className='font-ruina text-[36px] text-white h-[83px] leading-[42px]'>Recomendaciones <br></br>para la visita</p>
-									<img src={BrownEffect} alt="" className='w-full absolute -bottom-[37px] left-0 rotate-180' />
+									<img src={BrownEffect} alt="" className='h-[37px] w-full absolute -top-[36px] left-0' />
+									<p className='font-ruina text-[24px] md:text-[36px] text-white h-[50px] md:h-[83px] leading-[26px] md:leading-[42px]'>Recomendaciones <br></br>para la visita</p>
+									<img src={BrownEffect} alt="" className='w-full h-[37px] absolute -bottom-[36px] left-0 rotate-180' />
 								</div>
-								<p className='montserrat-300 text-[33px] leading-[42px] text-principal'>
+								<p className='montserrat-300 text-[24px] md:text-[33px] leading-[26px] md:leading-[42px] text-principal'>
 									Para que tu experiencia sea más cómoda y segura,
 								</p>
-								<p className='montserrat-300 text-[33px] leading-[42px] text-principal'>
+								<p className='montserrat-300 text-[24px] md:text-[33px] leading-[26px] md:leading-[42px] text-principal mb-8 sm:mb-0'>
 									<b className='montserrat-800'>te recomendamos llevar:</b>
 								</p>
-								<div className='w-full max-w-[400px] mx-auto flex items-center my-6'>
-									<img src={Icon2} alt="" />
-									<p className='montserrat-300 text-[33px] leading-[42px] ml-8 text-principal'>Ropa ligera</p>
+								<div className='w-full max-w-[400px] mx-auto block sm:flex items-center my-6 text-center sm:text-left'>
+									<img src={Icon2} alt="" className='mx-auto sm:mx-0 mb-4 sm:mb-0' />
+									<p className='montserrat-300 text-[24px] md:text-[33px] leading-[26px] md:leading-[42px] ml-0 sm:ml-8 text-principal'>Ropa ligera</p>
 								</div>
-								<div className='w-full max-w-[400px] mx-auto flex items-center my-6'>
-									<img src={Icon3} alt="" />
-									<p className='montserrat-300 text-[33px] leading-[42px] ml-8 text-principal'>Bloqueador solar</p>
+								<div className='w-full max-w-[400px] mx-auto block sm:flex items-center my-6 text-center sm:text-left'>
+									<img src={Icon3} alt="" className='mx-auto sm:mx-0 mb-4 sm:mb-0' />
+									<p className='montserrat-300 text-[24px] md:text-[33px] leading-[26px] md:leading-[42px] ml-0 sm:ml-8 text-principal'>Bloqueador solar</p>
 								</div>
-								<div className='w-full max-w-[400px] mx-auto flex items-center my-6'>
-									<img src={Icon4} alt="" />
-									<p className='montserrat-300 text-[33px] leading-[42px] ml-8 text-principal'>Sombrero o gorra</p>
+								<div className='w-full max-w-[400px] mx-auto block sm:flex items-center my-6 text-center sm:text-left'>
+									<img src={Icon4} alt="" className='mx-auto sm:mx-0 mb-4 sm:mb-0' />
+									<p className='montserrat-300 text-[24px] md:text-[33px] leading-[26px] md:leading-[42px] ml-0 sm:ml-8 text-principal'>Sombrero o gorra</p>
 								</div>
-								<div className='w-full max-w-[400px] mx-auto flex items-center my-6'>
-									<img src={Icon5} alt="" />
-									<p className='montserrat-300 text-[33px] leading-[42px] ml-8 text-principal'>Calzado cómodo</p>
+								<div className='w-full max-w-[400px] mx-auto block sm:flex items-center my-6 text-center sm:text-left'>
+									<img src={Icon5} alt="" className='mx-auto sm:mx-0 mb-4 sm:mb-0' />
+									<p className='montserrat-300 text-[24px] md:text-[33px] leading-[26px] md:leading-[42px] ml-0 sm:ml-8 text-principal'>Calzado cómodo</p>
 								</div>
-								<div className='w-full max-w-[400px] mx-auto flex items-center my-6'>
-									<img src={Icon6} alt="" />
-									<p className='montserrat-300 text-[33px] leading-[42px] ml-8 text-principal'>Agua embotellada.</p>
+								<div className='w-full max-w-[400px] mx-auto block sm:flex items-center my-6 text-center sm:text-left'>
+									<img src={Icon6} alt="" className='mx-auto sm:mx-0 mb-4 sm:mb-0' />
+									<p className='montserrat-300 text-[24px] md:text-[33px] leading-[26px] md:leading-[42px] ml-0 sm:ml-8 text-principal'>Agua embotellada.</p>
 								</div>
-								<p className='montserrat-800 text-[16px] text-principal'>
+								<p className='montserrat-800 text-[16px] text-principal mt-6 sm:mt-0'>
 									No está permitido ingresar con mascotas ni con alimentos del exterior
 								</p>
 							</div>
 						</div>
-						<animated.div style={!isMobile ? animationPropsBanner6 : {}} className="animated-element absolute -bottom-[360px] left-[100px]">
-							<img src={Animal3} alt="" className='w-[333px]' />
+						<animated.div style={!isMobile ? animationPropsBanner6 : {}} className="animated-element relative lg:absolute bottom-0 lg:-bottom-[360px] lg:left-[100px]">
+							<img src={Animal3} alt="" className='w-[333px] mx-auto lg:mx-0' />
 						</animated.div>
 					</div>
 				</section>
 
-				<section className='w-full mt-[150px] mb-[100px] relative'>
+				<section className='w-full mt-[50px] lg:mt-[150px] mb-[100px] relative'>
 					<div className="w-full max-w-[1360px] mx-auto px-[20px] relative z-20 pt-20">
 						<h2 className="text-[36px] text-principal mb-8 uppercase text-center font-ruina relative tracking-[6px]">
 							Calendario de temporadas y eventos
 						</h2>
-						<p className='montserrat-300 text-[40px] leading-[42px] text-center max-w-[800px] mx-auto mb-4 text-principal'>
+						<p className='montserrat-300 text-[24px] md:text-[40px] leading-[26px] md:leading-[42px] text-center max-w-[800px] mx-auto mb-4 text-principal'>
 							<b className='montserrat-800'>Consulta nuestro calendario</b> y planea
 							tu visita en la mejor temporada.
 						</p>

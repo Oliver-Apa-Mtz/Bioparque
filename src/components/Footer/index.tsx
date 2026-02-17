@@ -70,7 +70,7 @@ const Footer = () => {
 								<input type="text" className='h-[58px] w-full border border-gray bg-transparent px-4 montserrat-300 text-[15px] outline-none text-white' placeholder="nombre@correo.com" />
 								<Link to="/contacto" className='button button--secondary font-ruina flex items-center' style={{ height: '58px' }}>SUSCRIBIRSE</Link>
 							</div>
-							<p className='text-[13px] text-white montserrat-300 pr-8 text-center lg:text-left'>
+							<p className='text-[13px] text-white montserrat-300 pr-0 lg:pr-8 text-center lg:text-left'>
 								Únete a nuestro boletín y recibe noticias,
 								promociones  y actualizaciones de reservas
 								estacionales.

@@ -12,7 +12,6 @@ import Image1 from '../../assets/img/experiencia-1.webp';
 import Image2 from '../../assets/img/experiencia-2.webp';
 import Image3 from '../../assets/img/experiencia-3.webp';
 import Image4 from '../../assets/img/experiencia-4.webp';
-import MapEffect2 from '../../assets/img/map-effect-3.png';
 import ButtonArrow from '../../assets/img/arrow-button.svg';
 
 const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, children }) => {
@@ -37,6 +36,7 @@ const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, c
 }
 
 const Experiencies = () => {
+	const [loading, setLoading] = useState(true);
 	const [title, setTitle] = useState(false);
 	const [topWolf, setTopWolf] = useState(-885);
 	const isMobile = window.innerWidth <= 1023;
@@ -75,13 +75,25 @@ const Experiencies = () => {
 	};
 
 	useEffect(() => {
-		setTitle(true);
-		setTimeout(() => {
-			setIsVisible(true);
-		}, 800);
-		setTimeout(() => {
-			setIsVisibleBanner2(true);
-		}, 1000);
+		const images = [
+			BannerExperiencies, Cocodrile, Image1, Image2, Image3, Image4
+		];
+
+		const imagePromises = images.map(src => {
+			return new Promise<void>((resolve) => {
+				const img = new Image();
+				img.onload = img.onerror = () => resolve();
+				img.src = src;
+			});
+		});
+
+		Promise.all(imagePromises).then(() => {
+			setLoading(false);
+			setTitle(true);
+			setTimeout(() => setIsVisible(true), 800);
+			setTimeout(() => setIsVisibleBanner2(true), 1000);
+		});
+
 		window.addEventListener('scroll', handleScroll);
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
@@ -99,6 +111,17 @@ const Experiencies = () => {
 			setModalOpen(false);
 		}
 	}, [modalActive]);
+
+	if (loading) {
+		return (
+			<div className='fixed inset-0 bg-white flex items-center justify-center z-50'>
+				<div className='text-center'>
+					<div className='w-16 h-16 border-4 border-principal border-t-transparent rounded-full animate-spin mx-auto'></div>
+					<p className='text-principal mt-4 font-ruina text-xl'>Cargando...</p>
+				</div>
+			</div>
+		);
+	}
 
 	return (
 		<Layout>
@@ -204,7 +227,6 @@ const Experiencies = () => {
 							</div>
 						</div>
 					</div>
-					<img src={MapEffect2} alt="" className='w-full absolute -bottom-[20px] left-0' />
 				</section>
 
 				{modalOpen && (

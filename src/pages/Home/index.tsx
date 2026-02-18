@@ -72,6 +72,7 @@ const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, c
 }
 
 const Home = () => {
+	const [loading, setLoading] = useState(true);
 	const [title, setTitle] = useState(false);
 	const [topWolf, setTopWolf] = useState(-800);
 	const isMobile = window.innerWidth <= 1023;
@@ -138,18 +139,42 @@ const Home = () => {
 	};
 
 	useEffect(() => {
-		setTitle(true);
-		setTimeout(() => {
-			setIsVisible(true);
-		}, 800);
-		setTimeout(() => {
-			setIsVisibleBanner2(true);
-		}, 1000);
+		const images = [
+			BannerHome, Wolf, Card1, Card2, Card3, Card4, WaveEffect,
+			Ave1, Ave2, WaveBlue, Card5, Card6, BannerMap, AnimalMap
+		];
+
+		const imagePromises = images.map(src => {
+			return new Promise<void>((resolve) => {
+				const img = new Image();
+				img.onload = img.onerror = () => resolve();
+				img.src = src;
+			});
+		});
+
+		Promise.all(imagePromises).then(() => {
+			setLoading(false);
+			setTitle(true);
+			setTimeout(() => setIsVisible(true), 800);
+			setTimeout(() => setIsVisibleBanner2(true), 1000);
+		});
+
 		window.addEventListener('scroll', handleScroll);
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
+
+	if (loading) {
+		return (
+			<div className='fixed inset-0 bg-white flex items-center justify-center z-50'>
+				<div className='text-center'>
+					<div className='w-16 h-16 border-4 border-principal border-t-transparent rounded-full animate-spin mx-auto'></div>
+					<p className='text-principal mt-4 font-ruina text-xl'>Cargando...</p>
+				</div>
+			</div>
+		);
+	}
 
 	return (
 		<Layout>

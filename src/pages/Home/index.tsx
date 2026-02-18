@@ -3,9 +3,12 @@ import React, { useState, useEffect } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 import { Link } from 'react-router-dom';
 import { useTrail, a } from '@react-spring/web'
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import './home.css';
-import Layout from '../../components/Layout';
 
+import Slider from 'react-slick';
+import Layout from '../../components/Layout';
 import BannerHome from '../../assets/img/banner-home.webp';
 import Wolf from '../../assets/img/elephant.svg';
 import Card1 from '../../assets/img/card-animal-1.webp';
@@ -22,6 +25,30 @@ import BannerMap from '../../assets/img/map-dark.webp';
 import AnimalMap from '../../assets/img/animal-3.webp';
 import Arrow from '../../assets/img/arrow.svg';
 import ButtonArrow from '../../assets/img/arrow-button.svg';
+
+const settings = {
+	dots: true,
+	infinite: true,
+	speed: 1000,
+	slidesToShow: 3,
+	slidesToScroll: 1,
+	autoplay: false,
+	autoplaySpeed: 10000,
+	responsive: [
+		{
+			breakpoint: 1024,
+			settings: {
+				slidesToShow: 2,
+			}
+		},
+		{
+			breakpoint: 768,
+			settings: {
+				slidesToShow: 1,
+			}
+		}
+	]
+};
 
 const Trail: React.FC<{ open: boolean; children: React.ReactNode }> = ({ open, children }) => {
 	const items = React.Children.toArray(children)
@@ -164,29 +191,31 @@ const Home = () => {
 						<h3 className="text-principal text-[24px] md:text-[35px] xl:text-[40px] text-center montserrat-300">
 							Conoce a los habitantes más fascinantes del Bioparc El Encanto
 						</h3>
-						<div className='w-full flex flex-wrap md:flex-nowrap justify-between gap-4 pt-10 carrousel-container'>
-							<div className='w-full md:w-[26%] carrousel-item'>
-								<img src={Card1} alt="" className='w-full md:w-auto h-[300px] lg:h-[400px] 2xl:h-[500px] object-cover' />
-								<p className='text-principal plus-jakarta-sans-600 text-[36px] my-4'>Jirafas</p>
-								<p className='text-principal plus-jakarta-sans-400 text-[20px] leading-[25px]'>
-									Acércate a nuestras jirafas y
-									descubre curiosidades de su vida.
-								</p>
-							</div>
-							<div className='w-full md:w-[48%] carrousel-item'>
-								<img src={Card2} alt="" className='w-full h-[300px] lg:h-[400px] 2xl:h-[500px] object-cover md:w-[820px]' />
-								<p className='text-principal plus-jakarta-sans-600 text-[36px] my-4'>Elefantes</p>
-								<p className='text-principal plus-jakarta-sans-400 text-[20px] leading-[25px]'>
-									Admira a los gigantes de la sabana en un hábitat seguro y educativo.
-								</p>
-							</div>
-							<div className='w-full md:w-[26%] carrousel-item'>
-								<img src={Card3} alt="" className='w-full md:w-auto h-[300px] lg:h-[400px] 2xl:h-[500px] object-cover' />
-								<p className='text-principal plus-jakarta-sans-600 text-[36px] my-4'>Felinos</p>
-								<p className='text-principal plus-jakarta-sans-400 text-[20px] leading-[25px]'>
-									Símbolos de fuerza y majestuosidad en su hábitat
-								</p>
-							</div>
+						<div className='w-full pt-10 carrousel-container'>
+							<Slider {...settings}>
+								<div className='px-2'>
+									<img src={Card1} alt="" className='w-full h-[300px] lg:h-[400px] 2xl:h-[500px] object-cover' />
+									<p className='text-principal plus-jakarta-sans-600 text-[36px] my-4'>Jirafas</p>
+									<p className='text-principal plus-jakarta-sans-400 text-[20px] leading-[25px]'>
+										Acércate a nuestras jirafas y
+										descubre curiosidades de su vida.
+									</p>
+								</div>
+								<div className='px-2'>
+									<img src={Card2} alt="" className='w-full h-[300px] lg:h-[400px] 2xl:h-[500px] object-cover' />
+									<p className='text-principal plus-jakarta-sans-600 text-[36px] my-4'>Elefantes</p>
+									<p className='text-principal plus-jakarta-sans-400 text-[20px] leading-[25px]'>
+										Admira a los gigantes de la sabana en un hábitat seguro y educativo.
+									</p>
+								</div>
+								<div className='px-2'>
+									<img src={Card3} alt="" className='w-full h-[300px] lg:h-[400px] 2xl:h-[500px] object-cover' />
+									<p className='text-principal plus-jakarta-sans-600 text-[36px] my-4'>Felinos</p>
+									<p className='text-principal plus-jakarta-sans-400 text-[20px] leading-[25px]'>
+										Símbolos de fuerza y majestuosidad en su hábitat
+									</p>
+								</div>
+							</Slider>
 						</div>
 					</div>
 					<div className='absolute w-full right-0 top-[500px] z-10'>
@@ -228,7 +257,7 @@ const Home = () => {
 
 				<section className='w-full bg-cover bg-center relative pb-[70px]' style={{ backgroundImage: `url(${WaveBlue})` }}>
 					<animated.div style={!isMobile ? animationPropsBanner7 : {}} className="animated-element">
-						<div className="w-full max-w-[1360px] mx-auto px-[20px] pt-[50px] md:pt-[100px] lg:pt-[200px]">
+						<div className="w-full max-w-[1360px] mx-auto px-[20px] pt-[100px] xl:pt-[50px]">
 							<div className='w-full max-w-[900px] text-center mx-auto mb-20'>
 								<p className='font-ruina text-[36px] text-black mb-2'>Blog</p>
 								<p className='montserrat-300 text-black text-[24px] md:text-[52px] leading-[50px] -tracking-[1px]'>
@@ -267,10 +296,11 @@ const Home = () => {
 				</section>
 
 				<section className='w-full bg-cover bg-center relative pb-[40px] md:pb-[100px]' style={{ backgroundImage: `url(${BannerMap})` }}>
+					<div className='absolute inset-0 bg-black/40 z-0'></div>
 					<animated.div style={!isMobile ? animationPropsBanner5 : {}} className="relative animated-element w-full z-10">
 						<img src={AnimalMap} className='hidden md:block absolute w-[262px] right-[250px] z-10 top-0' alt="" />
 					</animated.div>
-					<div className="w-full max-w-[1360px] mx-auto px-[20px] pt-[40px] md:pt-[150px]">
+					<div className="w-full max-w-[1360px] mx-auto px-[20px] pt-[40px] md:pt-[150px] relative z-10">
 						<div className='w-full max-w-[900px] text-center mx-auto mb-16'>
 							<animated.div style={!isMobile ? animationPropsBanner8 : {}} className="animated-element">
 								<p className='font-ruina text-[36px] text-white mb-2'>Mapa</p>

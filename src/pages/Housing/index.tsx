@@ -260,7 +260,8 @@ const Housing = () => {
 				</section>
 
 				<section className='w-full bg-cover bg-center relative pb-[40px] md:pb-[100px]' style={{ backgroundImage: `url(${BannerMap})` }}>
-					<div className="w-full max-w-[1360px] mx-auto px-[20px] pt-[40px] md:pt-[150px]">
+					<div className='absolute inset-0 bg-black/40 z-0'></div>
+					<div className="w-full max-w-[1360px] mx-auto px-[20px] pt-[40px] md:pt-[150px] relative z-10">
 						<div className='w-full max-w-[900px] text-center mx-auto mb-16'>
 							<animated.div style={!isMobile ? animationPropsBanner4 : {}} className="animated-element">
 								<p className='font-ruina text-[36px] text-white mb-2'>Ubicación</p>

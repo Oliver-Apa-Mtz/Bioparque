@@ -106,7 +106,7 @@ const Regulation = () => {
 								<span className="text-[129px] text-white mb-10 leading-[130px] uppercase font-ruina title-shadow">De visita</span>
 							</Trail>
 							<animated.div style={!isMobile ? animationPropsBanner1 : {}} className="animated-element">
-								<p className="w-full md:w-[500px] lg:w-full text-white text-[24px] md:text-[35px] xl:text-[49px] montserrat-300 mt-[30px] md:mt-[0px]">
+								<p className="w-full md:w-[650px] text-white text-[24px] md:text-[35px] xl:text-[49px] montserrat-300 mt-[30px] md:mt-[0px]">
 									Seguridad y Conservación ante todo
 								</p>
 							</animated.div>

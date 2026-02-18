@@ -11,7 +11,6 @@ import Ave from '../../assets/img/ave.svg';
 import ButtonArrow from '../../assets/img/arrow-small.svg';
 import BannerMap from '../../assets/img/map-dark.webp';
 import MapEffect from '../../assets/img/map-effect-2.png';
-import MapEffect2 from '../../assets/img/map-effect-3.png';
 import Habitacion1 from '../../assets/img/habitacion-1.webp';
 import Habitacion2 from '../../assets/img/habitacion-2.webp';
 import Habitacion3 from '../../assets/img/habitacion-3.webp';
@@ -107,15 +106,15 @@ const Housing = () => {
 	return (
 		<Layout>
 			<div>
-				<section className="w-full h-[1200px] px-20 bg-cover bg-center relative pt-[300px]" style={{ backgroundImage: `url(${BannerHospedaje})` }} role="banner">
+				<section className="banner-ppal w-full h-[1200px] px-20 bg-cover bg-center relative pt-[300px]" style={{ backgroundImage: `url(${BannerHospedaje})` }} role="banner">
 					<div className="w-full max-w-[1300px] mx-auto">
-						<div className="relative z-20">
+						<div className="relative z-20 text-center md:text-left">
 							<Trail open={title}>
 								<span className="text-[129px] text-white mb-10 leading-[130px] uppercase font-ruina title-shadow">Hospedate</span>
 								<span className="text-[129px] text-white mb-10 leading-[130px] uppercase font-ruina title-shadow">En Bioparc</span>
 							</Trail>
 							<animated.div style={!isMobile ? animationPropsBanner1 : {}} className="animated-element">
-								<p className="text-white text-[49px] montserrat-300 wfull max-w-[850px] leading-[50px]">
+								<p className="text-white text-[24px] md:text-[35px] xl:text-[49px] montserrat-300 wfull max-w-[850px] leading-[26px] md:leading-[50px] mt-[30px] md:mt-[0px]">
 									Haz de tu visita al Bioparque una experiencia
 									completa quedándote en nuestras áreas de hospedaje.
 								</p>
@@ -126,15 +125,15 @@ const Housing = () => {
 
 				<section className="w-full mb-10 relative">
 					<animated.div style={!isMobile ? animationPropsBanner2 : {}} className="relative animated-element w-full">
-						<div className='absolute w-[1600px] right-0 z-10 cocodrile-animate' style={{ top: topWolf + 'px' }}>
+						<div className='absolute w-[800px] md:w-[1200px] lg:w-[1600px] right-0 z-10 cocodrile-animate' style={{ top: topWolf + 'px' }}>
 							<img src={Ave} alt="" className='w-full' />
 						</div>
 					</animated.div>
-					<div className="w-full max-w-[1360px] mx-auto px-[20px] relative z-20 pt-20">
+					<div className="w-full max-w-[1360px] mx-auto px-[20px] relative z-20 pt-0 md:pt-20">
 						<h2 className="w-full max-w-[700px] mx-auto text-[36px] text-principal mb-8 uppercase text-center font-ruina title-line relative tracking-[6px]">
 							cabañas y eco-lodges.
 						</h2>
-						<p className='w-full max-w-[1100px] text-center mx-auto montserrat-300 text-principal text-[40px] leading-[50px] -tracking-[1px]'>
+						<p className='w-full max-w-[1100px] text-center mx-auto montserrat-300 text-principal text-[24px] md:text-[35px] xl:text-[40px] leading-[28px] md:leading-[40px] xl:leading-[50px] -tracking-[1px]'>
 							Vive la naturaleza de día y de noche en
 							espacios diseñados para tu comodidad.
 						</p>
@@ -146,19 +145,19 @@ const Housing = () => {
 				</section>
 
 				<section className='w-full pb-10 mb-10 relative z-10'>
-					<div className="w-full max-w-[1300px] mx-auto">
+					<div className="w-full max-w-[1380px] mx-auto px-10">
 						<animated.div style={!isMobile ? animationPropsBanner3 : {}} className="animated-element">
-							<div className='w-full flex gap-4 justify-between'>
-								<div className='w-full max-w-[424px]'>
-									<div className='w-full h-[476px] bg-cover bg-center cursor-pointer' style={{ backgroundImage: `url(${Habitacion1})` }} onClick={() => { setModalOpen(true); setSelectedImage(0); }}></div>
+							<div className='w-full flex gap-4 justify-center lg:justify-between flex-wrap lg:flex-nowrap'>
+								<div className='w-full max-w-[336px] lg:max-w-[424px] mb-10 lg:mb-0'>
+									<div className='w-full h-[320px] md:h-[400px] xl:h-[476px] bg-cover bg-center cursor-pointer' style={{ backgroundImage: `url(${Habitacion1})` }} onClick={() => { setModalOpen(true); setSelectedImage(0); }}></div>
 									<div className='w-full max-w-[340px] mx-auto'>
-										<p className='montserrat-300 text-principal text-[40px] text-center'>Eco-lodges familiares</p>
+										<p className='montserrat-300 text-principal text-[24px] md:text-[35px] xl:text-[40px] text-center h-auto md:h-[120px] py-4 md:py-0'>Eco-lodges familiares</p>
 										<button onClick={() => { setModalOpen(true); setSelectedImage(0); }} className='button button--secondary button--full font-ruina relative flex justify-between items-center button--arrow'>
 											Ver galería
 											<img src={ButtonArrow} alt="" className='w-[8px] ml-4 -mt-[4px]' />
 										</button>
 										<p className='plus-jakarta-sans-300 text-principal text-[21px] my-2'>Hospedajes desde</p>
-										<p className='plus-jakarta-sans-600 text-principal text-[50px] my-2'>$950 <span className='plus-jakarta-sans-300 text-[#959191] text-[16px]'>/ POR NOCHE</span></p>
+										<p className='plus-jakarta-sans-600 text-principal text-[24px] md:text-[35px] xl:text-[50px] my-2'>$950 <span className='plus-jakarta-sans-300 text-[#959191] text-[16px]'>/ POR NOCHE</span></p>
 										<p className='montserrat-300 text-[#959191] text-[16px] my-2'>con opciones adaptadas a familias, parejas y grupos.</p>
 										<Link to="/contacto" className='button button--secondary button--full font-ruina relative flex justify-between items-center button--arrow'>
 											Reserva ahora
@@ -190,16 +189,16 @@ const Housing = () => {
 										</p>
 									</div>
 								</div>
-								<div className='w-full max-w-[424px]'>
-									<div className='w-full h-[476px] bg-cover bg-center cursor-pointer' style={{ backgroundImage: `url(${Habitacion2})` }} onClick={() => { setModalOpen(true); setSelectedImage(1); }}></div>
+								<div className='w-full max-w-[336px] lg:max-w-[424px] mb-10 lg:mb-0'>
+									<div className='w-full h-[320px] md:h-[400px] xl:h-[476px] bg-cover bg-center cursor-pointer' style={{ backgroundImage: `url(${Habitacion2})` }} onClick={() => { setModalOpen(true); setSelectedImage(1); }}></div>
 									<div className='w-full max-w-[340px] mx-auto'>
-										<p className='montserrat-300 text-principal text-[40px] text-center'>Cabañas privadas</p>
+										<p className='montserrat-300 text-principal text-[24px] md:text-[35px] xl:text-[40px] text-center h-auto md:h-[120px] py-4 md:py-0'>Cabañas privadas</p>
 										<button onClick={() => { setModalOpen(true); setSelectedImage(1); }} className='button button--secondary button--full font-ruina relative flex justify-between items-center button--arrow'>
 											Ver galería
 											<img src={ButtonArrow} alt="" className='w-[8px] ml-4 -mt-[4px]' />
 										</button>
 										<p className='plus-jakarta-sans-300 text-principal text-[21px] my-2'>Hospedajes desde</p>
-										<p className='plus-jakarta-sans-600 text-principal text-[50px] my-2'>$850 <span className='plus-jakarta-sans-300 text-[#959191] text-[16px]'>/ POR NOCHE</span></p>
+										<p className='plus-jakarta-sans-600 text-principal text-[24px] md:text-[35px] xl:text-[50px] my-2'>$850 <span className='plus-jakarta-sans-300 text-[#959191] text-[16px]'>/ POR NOCHE</span></p>
 										<p className='montserrat-300 text-[#959191] text-[16px] my-2'>con opciones adaptadas a familias, parejas y grupos.</p>
 										<Link to="/contacto" className='button button--secondary button--full font-ruina relative flex justify-between items-center button--arrow'>
 											Reserva ahora
@@ -231,16 +230,16 @@ const Housing = () => {
 										</p>
 									</div>
 								</div>
-								<div className='w-full max-w-[424px]'>
-									<div className='w-full h-[476px] bg-cover bg-center cursor-pointer' style={{ backgroundImage: `url(${Habitacion3})` }} onClick={() => { setModalOpen(true); setSelectedImage(2); }}></div>
+								<div className='w-full max-w-[336px] lg:max-w-[424px] mb-10 lg:mb-0'>
+									<div className='w-full h-[320px] md:h-[400px] xl:h-[476px] bg-cover bg-center cursor-pointer' style={{ backgroundImage: `url(${Habitacion3})` }} onClick={() => { setModalOpen(true); setSelectedImage(2); }}></div>
 									<div className='w-full max-w-[340px] mx-auto'>
-										<p className='montserrat-300 text-principal text-[40px] text-center'>Área de camping</p>
+										<p className='montserrat-300 text-principal text-[24px] md:text-[35px] xl:text-[40px] text-center h-auto md:h-[120px] py-4 md:py-0'>Área de camping</p>
 										<button onClick={() => { setModalOpen(true); setSelectedImage(1); }} className='button button--secondary button--full font-ruina relative flex justify-between items-center button--arrow'>
 											Ver galería
 											<img src={ButtonArrow} alt="" className='w-[8px] ml-4 -mt-[4px]' />
 										</button>
 										<p className='plus-jakarta-sans-300 text-principal text-[21px] my-2'>Hospedajes desde</p>
-										<p className='plus-jakarta-sans-600 text-principal text-[50px] my-2'>$650 <span className='plus-jakarta-sans-300 text-[#959191] text-[16px]'>/ POR NOCHE</span></p>
+										<p className='plus-jakarta-sans-600 text-principal text-[24px] md:text-[35px] xl:text-[50px] my-2'>$650 <span className='plus-jakarta-sans-300 text-[#959191] text-[16px]'>/ POR NOCHE</span></p>
 										<p className='montserrat-300 text-[#959191] text-[16px] my-2'>con opciones adaptadas a familias, parejas y grupos.</p>
 										<Link to="/contacto" className='button button--secondary button--full font-ruina relative flex justify-between items-center button--arrow'>
 											Reserva ahora
@@ -261,23 +260,21 @@ const Housing = () => {
 					</div>
 				</section>
 
-				<section className='w-full bg-cover bg-center relative pb-[100px] bg-footer' style={{ backgroundImage: `url(${BannerMap})` }}>
-					<img src={MapEffect} alt="" className='w-full absolute -top-[5px] left-0' />
-					<div className="w-full max-w-[1360px] mx-auto px-[20px] pt-[150px]">
-						<animated.div style={!isMobile ? animationPropsBanner4 : {}} className="animated-element">
-							<div className='w-full max-w-[900px] text-center mx-auto mb-16'>
+				<section className='w-full bg-cover bg-center relative pb-[40px] md:pb-[100px]' style={{ backgroundImage: `url(${BannerMap})` }}>
+					<div className="w-full max-w-[1360px] mx-auto px-[20px] pt-[40px] md:pt-[150px]">
+						<div className='w-full max-w-[900px] text-center mx-auto mb-16'>
+							<animated.div style={!isMobile ? animationPropsBanner4 : {}} className="animated-element">
 								<p className='font-ruina text-[36px] text-white mb-2'>Ubicación</p>
-								<p className='montserrat-300 text-white text-[52px] leading-[65px] -tracking-[1px]'>
+								<p className='montserrat-300 text-white text-[24px] md:text-[52px] leading-[30px] md:leading-[65px] -tracking-[1px]'>
 									Nuestro hospedaje se encuentra dentro del <span className='montserrat-800'>Bioparque</span>
 								</p>
-								<p className='montserrat-300 text-white text-[19px] mt-6 mb-10 w-full'>
+								<p className='montserrat-300 text-white text-[19px] mt-6 mb-10 w-full max-w-[500px] mx-auto'>
 									Rodeados de naturaleza y a pocos pasos de las principales atracciones
 								</p>
 								<Link to="/contacto" className='button button--primary plus-jakarta-sans-600 uppercase' style={{ paddingBottom: 11 }}>Ver indicaciones</Link>
-							</div>
-						</animated.div>
+							</animated.div>
+						</div>
 					</div>
-					<img src={MapEffect2} alt="" className='w-full absolute -bottom-[20px] left-0' />
 				</section>
 
 				{modalOpen && (

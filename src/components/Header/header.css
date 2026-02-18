@@ -44,7 +44,11 @@ header .group:hover .header__nav__item--menu, header .group:hover .header__nav__
 	.header-logo {
 		height: 50px;
 	}
-	.button{
+	.button {
+		padding-left: 35px;
+		padding-right: 35px;
+	}
+	.header .button, footer .button{
 		font-size: 10px;
 		padding-left: 6px;
 		padding-right: 6px;

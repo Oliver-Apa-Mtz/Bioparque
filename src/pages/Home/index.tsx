@@ -274,7 +274,7 @@ const Home = () => {
 						<div className='w-full max-w-[900px] text-center mx-auto mb-16'>
 							<animated.div style={!isMobile ? animationPropsBanner8 : {}} className="animated-element">
 								<p className='font-ruina text-[36px] text-white mb-2'>Mapa</p>
-								<p className='montserrat-300 text-white text-[24px] md:text-[52px] leading-[65px] -tracking-[1px]'>
+								<p className='montserrat-300 text-white text-[24px] md:text-[52px] leading-[30px] md:leading-[65px] -tracking-[1px]'>
 									Planea tu recorrido con nuestro <span className='montserrat-800 uppercase'>mapa descargable.</span>
 								</p>
 								<p className='montserrat-300 text-white text-[19px] mt-6 mb-10 w-full max-w-[500px] mx-auto'>

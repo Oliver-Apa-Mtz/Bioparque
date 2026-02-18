@@ -120,7 +120,7 @@ const Faq = () => {
 							<img src={Giraffe} alt="" className='w-full' />
 						</div>
 					</animated.div>
-					<div className="w-full max-w-[1360px] mx-auto px-[20px] relative z-20 pt-0 sm:pt-10 lg:pt-20">
+					<div className="w-full max-w-[1360px] mx-auto relative z-20 pt-0 sm:pt-10 lg:pt-20">
 						<h2 className="text-[36px] text-principal mb-20 uppercase text-center font-ruina title-line relative tracking-[6px]">
 							Faq
 						</h2>

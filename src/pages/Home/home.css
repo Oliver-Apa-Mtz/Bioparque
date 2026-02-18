@@ -158,6 +158,9 @@
 	background: white;
 	z-index: 100;
 }
+.buttons-experiences .button{
+	padding: 10px 20px 8px;
+}
 
 @keyframes moveArrow {
 	0%, 50% {
@@ -176,7 +179,7 @@
 	.wolf-animate::before {
 		right: 250px;
 	}
-	.zebra-animate {
+	.zebra-animate, .flamenco-animate {
 		right: -100px;
 	}
 }
@@ -192,7 +195,7 @@
 	.trails-text > div{
 		height: 100px !important;
 	}
-	.zebra-animate {
+	.zebra-animate, .flamenco-animate {
 		right: -150px;
 	}
 }
@@ -217,13 +220,13 @@
 		line-height: 80px;
 		margin-bottom: 0px;
 	}
-	.lion-animate {
+	.lion-animate, .zebra-animate {
 		top: -600px !important;
 	}
-	.zebra-animate {
+	.flamenco-animate {
 		top: -600px !important;
 	}
-	.giraffe-animate{
+	.giraffe-animate, .cocodrile-animate{
 		top: -550px !important;
 	}
 }
@@ -239,7 +242,14 @@
 		top: -470px !important;
 	}
 	.giraffe-animate {
+		top: -300px !important;
+	}
+	.cocodrile-animate {
 		top: -400px !important;
+	}
+	.flamenco-animate {
+		right: 0;
+		top: -450px !important;
 	}
 }
 @media (max-width: 640px) {
@@ -252,6 +262,10 @@
 	}
 	.trails-text>div {
 		height: 50px !important;
+	}
+	.areas-buttons .button{
+		padding: 10px 18px;
+		font-size: 12px;
 	}
 }
 @media (max-width: 500px) {

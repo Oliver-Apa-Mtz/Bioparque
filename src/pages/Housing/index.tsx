@@ -10,7 +10,6 @@ import BannerHospedaje from '../../assets/img/banner-hospedaje.webp';
 import Ave from '../../assets/img/ave.svg';
 import ButtonArrow from '../../assets/img/arrow-small.svg';
 import BannerMap from '../../assets/img/map-dark.webp';
-import MapEffect from '../../assets/img/map-effect-2.png';
 import Habitacion1 from '../../assets/img/habitacion-1.webp';
 import Habitacion2 from '../../assets/img/habitacion-2.webp';
 import Habitacion3 from '../../assets/img/habitacion-3.webp';
